@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Fecha siempre visible y fuera del contenido, con buen contraste */
+.vertical-timeline-element-date {
+  position: absolute !important;
+  font-weight: bold;
+  color: white !important;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  top: 12px;       /* Ajusta para alinear verticalmente con el icono */
+  width: 80px;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+/* Lado izquierdo: fecha a la izquierda del icono, texto alineado a la derecha */
+.vertical-timeline-element--left .vertical-timeline-element-date {
+  left: -90px !important;  /* separa la fecha del contenido */
+  right: auto !important;
+  text-align: right;
+}
+
+/* Lado derecho: fecha a la derecha del icono, texto alineado a la izquierda */
+.vertical-timeline-element--right .vertical-timeline-element-date {
+  right: -90px !important; /* separa la fecha del contenido */
+  left: auto !important;
+  text-align: left;
+}
