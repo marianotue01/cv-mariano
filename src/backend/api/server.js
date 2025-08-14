@@ -58,3 +58,7 @@ export default async function handler(req, res) {
     res.status(500).json({ error: "Error generando respuesta", details: error.message });
   }
 }
+res.status(200).json({
+  answer: data.choices[0].message.content.trim(),
+  debug: "server.js ejecutado correctamente"
+});
