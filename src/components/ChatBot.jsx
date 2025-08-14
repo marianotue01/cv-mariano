@@ -16,7 +16,7 @@ export default function ChatBot() {
 
     try {
       // Usamos ruta relativa para que funcione en producción en Vercel
-      const res = await fetch("/api/chat", {
+      const res = await fetch("https://cv-mariano.vercel.app/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question }),
