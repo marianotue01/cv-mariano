@@ -1,10 +1,9 @@
 import fs from "fs";
 import path from "path";
 
-// Leemos system prompt
-const promptPath = path.join(process.cwd(), "src/backend/systemprompt.txt");
 let systemPrompt = "";
 try {
+  const promptPath = path.join(process.cwd(), "src/backend/systemprompt.txt");
   systemPrompt = fs.readFileSync(promptPath, "utf-8");
 } catch (err) {
   console.error("No se pudo leer systemprompt.txt:", err.message);
@@ -12,24 +11,18 @@ try {
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    res.status(405).json({ error: "Método no permitido" });
-    return;
+    return res.status(405).json({ error: "Método no permitido" });
   }
 
   const { question } = req.body;
-  if (!question) {
-    res.status(400).json({ error: "Falta la pregunta" });
-    return;
-  }
+  if (!question) return res.status(400).json({ error: "Falta la pregunta" });
 
   if (!process.env.OPENROUTER_API_KEY) {
     console.error("ERROR: No se encontró OPENROUTER_API_KEY");
-    res.status(500).json({ error: "Falta OPENROUTER_API_KEY" });
-    return;
+    return res.status(500).json({ error: "Falta OPENROUTER_API_KEY" });
   }
 
   try {
-    // Node 18+ ya tiene fetch nativo, no hace falta node-fetch
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -48,17 +41,15 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     if (data.choices && data.choices.length > 0) {
-      res.status(200).json({ answer: data.choices[0].message.content.trim() });
+      return res.status(200).json({
+        answer: data.choices[0].message.content.trim(),
+      });
     } else {
       console.error("Respuesta inesperada:", data);
-      res.status(500).json({ error: "Respuesta vacía del modelo", data });
+      return res.status(500).json({ error: "Respuesta vacía del modelo", data });
     }
   } catch (error) {
     console.error("Error generando respuesta:", error);
-    res.status(500).json({ error: "Error generando respuesta", details: error.message });
+    return res.status(500).json({ error: "Error generando respuesta", details: error.message });
   }
 }
-res.status(200).json({
-  answer: data.choices[0].message.content.trim(),
-  debug: "server.js ejecutado correctamente"
-});

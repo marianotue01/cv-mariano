@@ -10,22 +10,26 @@ export default function ChatBot() {
 
     const userMsg = { role: "user", content: input };
     setMessages((prev) => [...prev, userMsg]);
+
+    const question = input; // guardamos la pregunta antes de limpiar input
     setInput("");
 
     try {
-      const res = await fetch("http://localhost:3001/api/ask", {
+      // Usamos ruta relativa para que funcione en producción en Vercel
+      const res = await fetch("/api/chat", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ question: input }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question }),
       });
 
+      if (!res.ok) throw new Error("Error en la respuesta del servidor");
+
       const data = await res.json();
-      const botMsg = { role: "bot", content: data.answer };
+      const botMsg = { role: "bot", content: data.answer || "Sin respuesta" };
 
       setMessages((prev) => [...prev, botMsg]);
     } catch (err) {
+      console.error(err);
       setMessages((prev) => [
         ...prev,
         { role: "bot", content: "Error: no se pudo conectar con el servidor." },
