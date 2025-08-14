@@ -15,42 +15,42 @@ Core Competencies
 
 
 Experience
-    EY Poland | Senior Product Manager / People Manager
-    [Sept 2022 – Present]
-        Technical Product Manager (Associate Director) - Defined the vision, strategy, and long-term roadmap for EY’s Atlas, a SaaS product used for audits, assurance, and accounting as a central source of technical knowledge.
-        Planned and tracked five critical workstreams: Quality and Regulatory Compliance (content preservation), Digital Asset Management (Ovitas CMS to AEM migration), Client Edition subscription model, Intelligent Content Management (metadata and taxonomy standardization).
-        Led multiple strategic initiatives within the Atlas Program, including Aha!-Azure DevOps integration, fiscal year budget prioritization, legacy release decommissioning, and Product Increment (PI) coordination.
-        Utilized Aha!, Azure DevOps, and Power BI; delivered high-impact presentations to large audiences to drive stakeholder engagement and adoption.
-        Served as a people manager and career counselor, fostering skill development, career growth, and high-performing teams.
-    J.P. Morgan | Senior Product Manager / People Manager
-    [July 2021 – Aug 2022]
-        Global Network Services Product Manager (Executive Director) - Led strategic vision and execution for a suite of network products, ensuring seamless integration and operational efficiency.
-        Drove automation initiatives such as Logical Build Readiness, an event-driven architecture to enhance resilience and streamline data center site preparation.
-        Managed NETLs microservices optimizing network device data retrieval, transformation, and consolidation for improved accessibility via REST APIs.
-        Oversaw DART implementation (Device Automation, Reporting, and Tasking) enabling efficient network management system maintenance.
-        Served as a people manager and career counselor, fostering skill development, career growth, and high-performing teams.
-        At J.P. Morgan, our team developed and maintained a microservices architecture called NETLs (Network ETL Services) for the ingestion, transformation, and exposure of data from legacy systems, including syslog logs, SNMP traps, and flat files.
-        These NETL microservices, built mainly in Java and Python, were deployed in Docker containers orchestrated by Kubernetes. Data ingestion was handled with Kafka Connect, transformations were done using Apache Kafka Streams, and data exposure was managed through REST APIs exposed by Amazon API Gateway.
-        Transformed data was stored in MongoDB, enabling efficient queries and later consumed by Splunk for visualization, monitoring, and alert generation. Event-driven triggers were set up on Kafka topics for near real-time processing.
-    ExxonMobil | Senior Scrum Master / Product Owner / Manager
-    [Oct 2014 – June 2021]
-        Technical Software Platform PM and Agile Coach (IT Manager) - Led innovative solutions and unified building blocks for centralized self-service platforms and standards.
-        Managed portfolio of five products ensuring alignment with business objectives, technical excellence, and integration.
-        Drove standardization and scalability, fostering consistent platform architecture.
-        Collaborated cross-functionally with engineering, leadership, and stakeholders for product strategy and continuous improvements.
-        At ExxonMobil, I led the development of an automation product for deploying FlexLM licenses, built on .NET Core and deployed using PaaS services from Microsoft Azure, such as Azure App Service. This product automated the assignment and activation of FlexLM licenses on local or global license servers using REST APIs for cloud management and monitoring.    
-    [Apr 2013 – Sept 2014]
-        License Management Senior Product Owner - Delivered the License Automation Tool (LAT), a hybrid on-prem/cloud solution to streamline concurrent license installation via drag-and-drop interface.
-    [Mar 2008 – Mar 2013]
-        License Management Scrum Master (Manager) - Guided Agile adoption, Scrum ceremonies, coaching teams, backlog management, and IT leadership support with metrics and root cause analysis.
-    IBM | Supervisor / Team Lead / Technical Writer
-    [Oct 2004 – Feb 2008]
-        System Programmer Supervisor - Led Mainframe system programming team, ensured staffing and training.
-        Supported Z/Os administration, software product support, security fixes, upgrades, monitoring, and automation.
-    [Dec 2002 – Sept 2004]
-        Reporting Team Lead - Led performance reporting, stakeholder requirements, mainframe architecture knowledge, JCL programming, SQL, and SLA management.
-    [Sept 2001 – Nov 2002]
-        Outsourcing Technical Writer - Developed comprehensive documentation for change & problem management, capacity planning, SLA, disaster recovery, etc.
+   Senior Product Manager, EY (Ernst & Young), Warsaw, PL	 Sep 2022 — Present
+•	Led the vision, strategy, and multi-year roadmap for a global financial reporting and research platform serving internal and external clients across 40+ countries, aligning business objectives with user needs and technical feasibility. 
+•	Coordinated and mentored distributed Agile teams (up to 25 members across 5 regions), ensuring delivery of high-impact features within PI Planning cycles. 
+•	Designed and implemented global taxonomy and metadata governance in Atlas and Adobe Experience Manager, standardizing over 2,500 terms and automating metadata validation, reducing classification time by 30%. 
+•	Led the CMS migration from Ovitas to Adobe Experience Manager, integrating automated scripts and Azure DevOps pipelines, increasing publishing efficiency by 35% and reducing content errors. 
+•	Established governance workflows for content and metadata using AEM, Azure AD, RBAC, and Atlas, ensuring adherence to international regulatory standards. 
+•	Defined and monitored key KPIs (NPS, adoption rate, defect rate) using Power BI dashboards, enabling data-driven product decisions. 
+
+Senior Product Manager, J.P. Morgan, Buenos Aires, ARG	 Jul 2021 — Aug 2022
+•	Led the strategy and execution for global network products, ensuring integration and operational efficiency across data centers. 
+•	Delivered Logical Build Readiness, an event-driven architecture for rack provisioning, enhancing resilience, reducing preparation time by 25%, and increasing data center readiness accuracy to >99%. 
+•	Directed NETL microservices in Java/Python, containerized with Docker and orchestrated via Kubernetes, for ingestion, transformation, and exposure of legacy data (syslog, SNMP, flat files); leveraged Kafka Connect/Streams, REST APIs, MongoDB, and Splunk, reducing latency by ~35% and improving real-time monitoring and alerting. 
+•	Implemented DART (Device Automation, Reporting, and Tasking), reducing manual network management errors by ~30% and streamlining operational workflows. 
+•	Managed and mentored engineering teams, promoting skills, career growth, and high performance. 
+
+Senior Product Manager, ExxonMobil, Buenos Aires, ARG	 Apr 2013 — Jun 2021
+•	Led the development of innovative solutions and a unified set of building blocks, enabling centralized self-service platforms, reusable libraries, technical guidance, and standards, improving adoption and consistency across teams. 
+•	Managed a portfolio of five products, ensuring alignment with business objectives, technical excellence, and seamless integration, achieving on-time delivery for 95% of planned releases. 
+•	Drove platform standardization and scalability, fostering consistency in architecture and reducing implementation errors by ~20%. 
+•	Collaborated cross-functionally with engineering, leadership, and stakeholders to define product strategy, enhance adoption, and implement continuous improvements. 
+•	Accountable for the end-to-end development of the License Automation Tool (LAT), a hybrid on-prem/cloud solution that streamlines concurrent license installation; reduced manual license server management effort by ~30% and enabled users to install licenses efficiently via a drag-and-drop interface. 
+
+Senior Scrum Master, ExxonMobil, Buenos Aires, ARG	 Mar 2008 — Mar 2013
+•	Guided teams and the organization in adopting Agile/Scrum methodologies, fostering self-organization and improving delivery efficiency, resulting in 20–25% faster sprint completion. 
+•	Served as a servant leader and Agile Coach, removing impediments, facilitating Scrum ceremonies, and coaching multiple teams across the organization to enhance collaboration, productivity, and Agile maturity; supported Product Owners in backlog prioritization and refinement, improving delivery predictability. 
+•	Provided value to IT leadership by tracking credible metrics, analyzing incident trends, and delivering training on Problem & Change Management; facilitated Major Incident Review meetings using Root Cause Analysis, reducing recurring incidents by ~15% and improving overall service reliability. 
+
+Mainframe System Programmer/Supervisor, IBM, Buenos Aires, ARG	 Oct 2004 — Feb 2008
+•	Responsible for building and developing the Mainframe system programmers’ team, ensuring proper staffing, training, and skills development to maintain operational excellence. 
+•	Led administration and support of Z/OS systems, including installation of software products, application of security fixes, system upgrades, monitoring, and automation of Z/OS/390 operations. 
+•	Oversaw SMP, JCL, TSO/E, and batch processes, ensuring system reliability, high availability, and compliance with internal standards. 
+
+Technical Writer, IBM, Buenos Aires, ARG	 Sep 2001 — Sep 2004
+•	Developed comprehensive technical documentation adhering to organizational standards, covering Change & Problem Management, Capacity Planning, SLA, Disaster Recovery, and other IT operations processes. 
+•	Contributed as a Technical Writer on multiple outsourcing projects, ensuring clarity, accuracy, and compliance with contractual and regulatory requirements. 
+•	Collaborated with cross-functional teams to standardize documentation, improving readability and usability for internal and external stakeholders. 
 
 Certifications
 
