@@ -7,7 +7,8 @@
   "react-dom": "^18.x.x",
   "react-scripts": "^5.x.x",
   "react-icons": "^4.x.x",
-  "react-vertical-timeline-component": "^3.x.x"
+  "react-vertical-timeline-component": "^3.x.x",
+  "node-fetch": "^3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
