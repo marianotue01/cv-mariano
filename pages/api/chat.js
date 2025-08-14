@@ -51,4 +51,6 @@ export default async function handler(req, res) {
     }
   } catch (error) {
     console.error("Error generando respuesta:", error);
-    return res.status(500).json({ error: "Error generando respuesta", details: error.m
+    return res.status(500).json({ error: "Error generando respuesta", details: error.message });
+  }
+}
