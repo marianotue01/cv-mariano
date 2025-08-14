@@ -4,9 +4,5 @@ export default function handler(req, res) {
   }
 
   const { question } = req.body;
-  if (!question) return res.status(400).json({ error: "Falta la pregunta" });
-
-  return res.status(200).json({
-    answer: `Tu pregunta fue: "${question}". El backend funciona correctamente!`,
-  });
+  return res.status(200).json({ answer: `Recibí: "${question}"` });
 }
