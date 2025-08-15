@@ -8,7 +8,7 @@
     "react": "^18.x.x",
     "react-dom": "^18.x.x",
     "react-icons": "^4.x.x",
-    "react-scripts": "^0.0.0",
+    "react-scripts": "5.0.1",
     "react-vertical-timeline-component": "^3.x.x"
   },
   "scripts": {
