@@ -14,9 +14,12 @@ export default function AgileCV() {
       <img
         src="/4x4.jpg"
         alt="Foto de Mariano Tuero"
-        className="absolute top-6 right-6 w-32 h392 object-cover rounded-full border-[1px] border-grey shadow-md"
+        className="
+          absolute top-6 right-6
+          w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36
+          object-cover rounded-full border border-gray-300 shadow-md
+        "
       />
-
       <header className="mb-8">
         <h1 className="text-4xl font-bold flex items-center gap-2">
           Mariano Tuero
