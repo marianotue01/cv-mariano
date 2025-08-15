@@ -21,7 +21,7 @@ export default function AudioPresentation() {
     <div className="p-4 bg-gray-100 rounded shadow text-center">
          <button
         onClick={playIntro}
-        className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+        className="text-indigo-600 hover:text-indigo-700 text-lg" // text-lg lo hace más pequeño
       >
         🔊
       </button>
