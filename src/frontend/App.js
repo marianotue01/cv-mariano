@@ -16,7 +16,7 @@ export default function AgileCV() {
       />
 
       <header className="mb-8">
-        <h1 className="text-4xl font-bold">Mariano Tuero</h1>
+        <h1 className="text-4xl font-bold">Mariano Tuero </h1>  <AudioPresentation />
         <p className="text-lg text-indigo-700 font-semibold">
           Senior Product Manager |  Leader | Multilingual (ES/EN/PT)
         </p>
@@ -221,7 +221,6 @@ export default function AgileCV() {
       </section>
 
       <ChatBot />
-      <AudioPresentation />
       <ExperienceTimeline />
     </div>
   );
