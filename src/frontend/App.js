@@ -15,9 +15,9 @@ export default function AgileCV() {
         src="/4x4.jpg"
         alt="Foto de Mariano Tuero"
         className="
-          absolute top-6 right-6
-          w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36
-          object-cover object-top
+          absolute top-4 right-4
+          w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32
+          object-cover object-[center_20%]
           rounded-full border border-gray-300 shadow-md
         "
       />
