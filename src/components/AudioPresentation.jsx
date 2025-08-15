@@ -8,9 +8,9 @@ export default function AudioPresentation() {
     }
 
     const msg = new SpeechSynthesisUtterance(
-      "Hola, soy Mariano, programador y gestor de proyectos con más de 15 años de experiencia en entornos multinacionales. Bienvenido a mi CV online."
+      "Hi, This is Mariano, I am a senior Product Manager. Please reach out to me if you have any questions"
     );
-    msg.lang = "es-ES";
+    msg.lang = "en-En";
     msg.rate = 1; // velocidad de lectura
     msg.pitch = 1; // tono de la voz
 
@@ -19,12 +19,11 @@ export default function AudioPresentation() {
 
   return (
     <div className="p-4 bg-gray-100 rounded shadow text-center">
-      <h2 className="text-lg font-semibold mb-2">🎤 Presentación de Mariano</h2>
-      <button
+         <button
         onClick={playIntro}
         className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
       >
-        🔊 Escuchar presentación
+        🔊
       </button>
     </div>
   );
