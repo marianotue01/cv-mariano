@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AudioPresentation() {
+export default function AudioIcon() {
   const playIntro = () => {
     if (!("speechSynthesis" in window)) {
       alert("Tu navegador no soporta síntesis de voz.");
@@ -8,23 +8,32 @@ export default function AudioPresentation() {
     }
 
     const msg = new SpeechSynthesisUtterance(
-      "Hi, This is Mariano, I am a senior Product Manager. Please reach out to me if you have any questions"
+      "Hi, This is Mariano, I am a senior Product Manager. Please reach out to me if you have any questions."
     );
-    msg.lang = "en-En";
-    msg.rate = 1; // velocidad de lectura
-    msg.pitch = 1; // tono de la voz
+    msg.lang = "en-US";
+    msg.rate = 1;
+    msg.pitch = 1;
+
+    const voices = window.speechSynthesis.getVoices();
+    const maleVoice = voices.find(
+      (v) => v.lang.startsWith("en") && v.name.toLowerCase().includes("male")
+    );
+    msg.voice = maleVoice || voices[0];
 
     window.speechSynthesis.speak(msg);
   };
 
   return (
-    <div className="p-4 bg-gray-100 rounded shadow text-center">
-         <button
+    <div className="relative group inline-block">
+      <button
         onClick={playIntro}
-        className="text-indigo-600 hover:text-indigo-700 text-lg" // text-lg lo hace más pequeño
+        className="text-indigo-600 hover:text-indigo-700 text-sm p-0"
       >
         🔊
       </button>
+      <span className="absolute bottom-full mb-1 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+        Play
+      </span>
     </div>
   );
 }

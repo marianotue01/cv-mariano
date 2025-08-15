@@ -16,28 +16,32 @@ export default function AgileCV() {
       />
 
       <header className="mb-8">
-        <h1 className="text-4xl font-bold flex items-center gap-2">
-          Mariano Tuero
-          <AudioPresentation small /> {/* Podés pasarle una prop para versión compacta */}
-        </h1>
-        <p className="text-lg text-indigo-700 font-semibold">
-          Senior Product Manager | Leader | Multilingual (ES/EN/PT)
-        </p>
-        <p className="text-sm text-gray-600">
-          Warsaw, Poland | mariano.tuero@email.com
-        </p>
-        <p className="text-sm text-gray-600">
-          +48 573 824 000 |{" "}
-          <a
-            href="https://linkedin.com/in/mariano-tuero"
-            className="text-indigo-600 underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-        </p>
-      </header>
+      {/* Nombre y audio */}
+      <h1 className="text-4xl font-bold flex items-center gap-2">
+        Mariano Tuero
+        <AudioIcon />
+      </h1>
+      {/* Cargo y habilidades */}
+      <p className="text-lg text-indigo-700 font-semibold">
+        Senior Product Manager | Leader | Multilingual (ES/EN/PT)
+      </p>
+      {/* Ubicación y email */}
+      <p className="text-sm text-gray-600">
+        Warsaw, Poland | mariano.tuero@email.com
+      </p>
+      {/* Teléfono y LinkedIn */}
+      <p className="text-sm text-gray-600">
+        +48 573 824 000 |{" "}
+        <a
+          href="https://linkedin.com/in/mariano-tuero"
+          className="text-indigo-600 underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </p>
+    </header>
 
       <section className="mb-8 bg-white p-6 rounded shadow">
         <h2 className="text-2xl font-bold mb-3 border-b border-indigo-600 pb-1">
