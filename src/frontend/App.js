@@ -4,6 +4,8 @@ import ExperienceTimeline from "../components/ExperienceTimeline";
 import "react-vertical-timeline-component/style.min.css";
 import '../index.css';
 import AudioPresentation from "../components/AudioPresentation";
+import { Analytics } from "@vercel/analytics/react"
+
 
 export default function AgileCV() {
   return (
@@ -226,6 +228,7 @@ export default function AgileCV() {
 
       <ChatBot />
       <ExperienceTimeline />
+      <Analytics/>
     </div>
   );
 } 
