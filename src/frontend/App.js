@@ -3,6 +3,7 @@ import ChatBot from "../components/ChatBot"; // o ajustá el path según tu estr
 import ExperienceTimeline from "../components/ExperienceTimeline";
 import "react-vertical-timeline-component/style.min.css";
 import '../index.css';
+import AudioPresentation from "../components/AudioPresentation";
 
 export default function AgileCV() {
   return (
@@ -220,7 +221,8 @@ export default function AgileCV() {
       </section>
 
       <ChatBot />
+      <AudioPresentation />
       <ExperienceTimeline />
     </div>
   );
-}
+} 
