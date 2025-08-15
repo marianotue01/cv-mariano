@@ -16,9 +16,12 @@ export default function AgileCV() {
       />
 
       <header className="mb-8">
-        <h1 className="text-4xl font-bold">Mariano Tuero </h1>  <AudioPresentation />
+        <h1 className="text-4xl font-bold flex items-center gap-2">
+          Mariano Tuero
+          <AudioPresentation small /> {/* Podés pasarle una prop para versión compacta */}
+        </h1>
         <p className="text-lg text-indigo-700 font-semibold">
-          Senior Product Manager |  Leader | Multilingual (ES/EN/PT)
+          Senior Product Manager | Leader | Multilingual (ES/EN/PT)
         </p>
         <p className="text-sm text-gray-600">
           Warsaw, Poland | mariano.tuero@email.com
