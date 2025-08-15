@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-  "react": "^18.x.x",
-  "react-dom": "^18.x.x",
-  "react-scripts": "^5.x.x",
-  "react-icons": "^4.x.x",
-  "react-vertical-timeline-component": "^3.x.x",
-  "node-fetch": "3.3.1"
+    "@vercel/analytics": "^1.5.0",
+    "node-fetch": "3.3.1",
+    "react": "^18.x.x",
+    "react-dom": "^18.x.x",
+    "react-icons": "^4.x.x",
+    "react-scripts": "^0.0.0",
+    "react-vertical-timeline-component": "^3.x.x"
   },
   "scripts": {
     "start": "react-scripts start",
