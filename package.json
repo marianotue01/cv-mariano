@@ -5,27 +5,20 @@
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
     "node-fetch": "3.3.1",
-    "react": "^18.x.x",
-    "react-dom": "^18.x.x",
-    "react-icons": "^4.x.x",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "react-router-dom": "^7.8.1",
     "react-scripts": "5.0.1",
-    "react-vertical-timeline-component": "^3.x.x"
+    "react-vertical-timeline-component": "^3.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   },
   "devDependencies": {
     "concurrently": "^9.2.0",

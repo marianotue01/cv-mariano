@@ -89,5 +89,6 @@ export const education = "Bachelor's and Master’s degrees in Information Techn
 
 export const languages = [
   "English — C1 (Proficient)",
-  "Spanish — Native (Mother tongue)"
+  "Spanish — Native (Mother tongue)",
+  "Portugues — A1 (Beginner)"
 ];
