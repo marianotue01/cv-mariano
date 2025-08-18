@@ -1,39 +1,33 @@
-import React from "react";
+// src/components/AudioPresentation.jsx
+import React, { useRef } from "react";
 
-export default function AudioIcon() {
-  const playIntro = () => {
-    if (!("speechSynthesis" in window)) {
-      alert("Tu navegador no soporta síntesis de voz.");
-      return;
+const AudioPresentation = ({ small = false }) => {
+  const audioRef = useRef(null);
+
+  const handlePlay = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
     }
-
-    const msg = new SpeechSynthesisUtterance(
-      "Hi! Pleased to meet you and welcome to my page. Feel free to reach out if you have any questions or ideas."
-    );
-    msg.lang = "en-US";
-    msg.rate = 1;
-    msg.pitch = 1;
-
-    const voices = window.speechSynthesis.getVoices();
-    const maleVoice = voices.find(
-      (v) => v.lang.startsWith("en") && v.name.toLowerCase().includes("male")
-    );
-    msg.voice = maleVoice || voices[0];
-
-    window.speechSynthesis.speak(msg);
   };
 
   return (
-    <div className="relative group inline-block">
+    <div>
       <button
-        onClick={playIntro}
-        className="text-indigo-600 hover:text-indigo-700 text-sm p-0"
+        onClick={handlePlay}
+        className={`${
+          small
+            ? "px-2 py-1 text-sm rounded-lg"
+            : "px-6 py-2 text-base rounded-xl"
+        } bg-blue-600 text-white shadow-md hover:bg-blue-700 transition`}
       >
         🔊
       </button>
-      <span className="absolute bottom-full mb-1 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-        Play
-      </span>
+      <audio ref={audioRef}>
+        <source src="/welcome.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
     </div>
   );
-}
+};
+
+export default AudioPresentation;

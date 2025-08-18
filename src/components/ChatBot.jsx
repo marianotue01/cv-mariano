@@ -1,49 +1,25 @@
+// src/components/ChatBot.jsx
 import React, { useState } from "react";
-import {
-  about,
-  coreCompetencies,
-  experience,
-  certifications,
-  education,
-  languages,
-} from "../frontend/data";
+import { generateSystemPrompt } from "../frontend/ChatPrompt";
 
 export default function ChatBot() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [minimized, setMinimized] = useState(false);
 
-  // Construimos el prompt base a partir de data.js
-  const systemPrompt = `
-Eres un asistente experto en la trayectoria y CV de Mariano Tuero. 
-Usa esta información para responder de forma precisa:
-
-About: ${about}
-
-Core Competencies: ${coreCompetencies.join(", ")}
-
-Experience: ${experience
-    .map((exp) => `${exp.role} en ${exp.company} (${exp.period})`)
-    .join("; ")}
-
-Certifications: ${certifications.join(", ")}
-
-Education: ${education}
-
-Languages: ${languages.join(", ")}
-  `;
+  // Generamos el system prompt una sola vez
+  const systemPrompt = generateSystemPrompt();
 
   const sendMessage = async () => {
     if (!input.trim()) return;
 
     const userMsg = { role: "user", content: input };
-    setMessages((prev) => [...prev, userMsg]);
+    setMessages(prev => [...prev, userMsg]);
 
     const question = input;
     setInput("");
 
     try {
-      // Mandamos la pregunta y el systemPrompt al backend
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -54,13 +30,12 @@ Languages: ${languages.join(", ")}
 
       const data = await res.json();
       const botMsg = { role: "bot", content: data.answer || "Sin respuesta" };
-
-      setMessages((prev) => [...prev, botMsg]);
+      setMessages(prev => [...prev, botMsg]);
     } catch (err) {
       console.error(err);
-      setMessages((prev) => [
+      setMessages(prev => [
         ...prev,
-        { role: "bot", content: "Error: no se pudo conectar con el servidor." },
+        { role: "bot", content: "Error: no se pudo conectar con el servidor." }
       ]);
     }
   };
@@ -94,7 +69,7 @@ Languages: ${languages.join(", ")}
                     : "text-left text-gray-800"
                 }`}
               >
-                <p className="bg-gray-100 inline-block px-3 py-1 rounded">
+                <p className="bg-gray-100 inline-block px-3 py-1 rounded break-words">
                   {msg.content}
                 </p>
               </div>
@@ -106,7 +81,7 @@ Languages: ${languages.join(", ")}
               type="text"
               placeholder="Escribí tu pregunta..."
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={e => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               disabled={minimized}
             />
