@@ -1,28 +1,17 @@
-import fs from "fs";
-import path from "path";
-
+// src/frontend/api/chat.js
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método no permitido" });
   }
 
-  const { question } = req.body;
-  if (!question) {
-    return res.status(400).json({ error: "Falta la pregunta" });
+  const { question, systemPrompt } = req.body; // ahora recibimos systemPrompt
+  if (!question || !systemPrompt) {
+    return res.status(400).json({ error: "Falta pregunta o prompt" });
   }
 
   if (!process.env.OPENROUTER_API_KEY) {
     console.error("ERROR: No se encontró OPENROUTER_API_KEY");
     return res.status(500).json({ error: "Falta OPENROUTER_API_KEY" });
-  }
-
-  // Leer system prompt
-  const promptPath = path.join(process.cwd(), "src/backend/systemprompt.txt");
-  let systemPrompt = "";
-  try {
-    systemPrompt = fs.readFileSync(promptPath, "utf-8");
-  } catch (err) {
-    console.error("No se pudo leer systemprompt.txt:", err.message);
   }
 
   try {

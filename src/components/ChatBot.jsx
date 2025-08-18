@@ -1,9 +1,37 @@
 import React, { useState } from "react";
+import {
+  about,
+  coreCompetencies,
+  experience,
+  certifications,
+  education,
+  languages,
+} from "../frontend/data";
 
 export default function ChatBot() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [minimized, setMinimized] = useState(false);
+
+  // Construimos el prompt base a partir de data.js
+  const systemPrompt = `
+Eres un asistente experto en la trayectoria y CV de Mariano Tuero. 
+Usa esta información para responder de forma precisa:
+
+About: ${about}
+
+Core Competencies: ${coreCompetencies.join(", ")}
+
+Experience: ${experience
+    .map((exp) => `${exp.role} en ${exp.company} (${exp.period})`)
+    .join("; ")}
+
+Certifications: ${certifications.join(", ")}
+
+Education: ${education}
+
+Languages: ${languages.join(", ")}
+  `;
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -11,15 +39,15 @@ export default function ChatBot() {
     const userMsg = { role: "user", content: input };
     setMessages((prev) => [...prev, userMsg]);
 
-    const question = input; // guardamos la pregunta antes de limpiar input
+    const question = input;
     setInput("");
 
     try {
-      // Usamos ruta relativa para que funcione en producción en Vercel
+      // Mandamos la pregunta y el systemPrompt al backend
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question }),
+        body: JSON.stringify({ question, systemPrompt }),
       });
 
       if (!res.ok) throw new Error("Error en la respuesta del servidor");

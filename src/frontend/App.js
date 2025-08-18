@@ -24,7 +24,7 @@ export default function App() {
       <img
         src="/4x4.jpg"
         alt="Foto de Mariano Tuero"
-        className="absolute top-4 right-4 w-28 h-28 object-cover rounded-full border shadow-md"
+        className="absolute top-6 right-6 w-28 h-28 object-cover object-top rounded-full border shadow-md"
       />
 
       {/* Header */}
