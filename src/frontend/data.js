@@ -85,7 +85,7 @@ export const certifications = [
   "Microsoft Certified: Azure Fundamentals"
 ];
 
-export const education = "Bachelor's and Master’s degrees in Information Technology – Universidad Tecnológica Nacional, Argentina";
+export const education = "Bachelor's and Master’s degrees in Systems Engineering – Universidad Tecnológica Nacional, Argentina";
 
 export const languages = [
   "English — C1 (Proficient)",
