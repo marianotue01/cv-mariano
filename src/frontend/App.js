@@ -112,7 +112,7 @@ export default function App() {
     <img
       src={`/experience-bg-${i}.jpg`} // nombrar según índice: experience-bg-0.jpg, etc.
       alt="Decorative"
-      className="absolute top-28 right-3 w-59 h-16 object-cover transform rotate-45 opacity-30 pointer-events-none"
+      className="hidden md:block absolute top-24 right-4 w-29 h-16 object-cover transform rotate-45 opacity-30 pointer-events-none"
     />
 
     <h3 className="text-xl font-semibold text-blue-700">
