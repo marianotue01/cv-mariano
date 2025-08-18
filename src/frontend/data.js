@@ -4,7 +4,8 @@ export const about = `Accomplished Senior Product Manager and Agile Leader with 
 Skilled at leading cross-functional teams, driving cloud integrations, microservices, and data governance initiatives that enhance efficiency and compliance. 
 Proven track record in mentoring teams, executing strategic roadmaps, and delivering measurable, high-impact results.
 Italian passport. Based in Poland but willing to relocate.
-He was born in Argentina, has dual citicenzip (Italian and Argentinian) and is a Systems engineer;`
+He was born in Argentina, has dual citicenzip (Italian and Argentinian) and is a Systems engineer.
+He was born in December 1978`
 
 export const coreCompetencies = [
   "Proven ability to communicate with impact, engaging and influencing both business partners and client stakeholders to foster alignment and drive collaboration.",
