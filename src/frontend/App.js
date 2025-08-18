@@ -39,7 +39,7 @@ export default function App() {
       {/* Header */}
       <header className="mb-6">
         <h1 className="text-4xl font-bold flex items-center gap-2">
-          Mariano Tuero New Features
+          Mariano Tuero
           <AudioPresentation small />
         </h1>
         <p className="text-lg font-semibold text-indigo-700">
