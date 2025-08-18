@@ -84,7 +84,7 @@ export default function App() {
             <h3 className="text-xl font-semibold">
               {exp.role} | {exp.company}
             </h3>
-            <p className="text-sm text-blue-600 mb-1">[{exp.period}]</p>
+            <p className="text-md text-blue-600 mb-1">[{exp.period}]</p>
             <ul>
               {exp.description.map((desc, j) => (
                 <li key={j} className="text-sm">
