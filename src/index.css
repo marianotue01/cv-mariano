@@ -28,3 +28,6 @@
   left: auto !important;
   text-align: left;
 }
+ul {
+  @apply list-disc list-inside text-gray-700;
+}

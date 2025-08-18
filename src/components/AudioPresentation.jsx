@@ -8,7 +8,7 @@ export default function AudioIcon() {
     }
 
     const msg = new SpeechSynthesisUtterance(
-      "Hi, This is Mariano, I am a senior Product Manager. Please reach out to me if you have any questions."
+      "Hi! Pleased to meet you and welcome to my page. Feel free to reach out if you have any questions or ideas."
     );
     msg.lang = "en-US";
     msg.rate = 1;
