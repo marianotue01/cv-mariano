@@ -23,7 +23,7 @@ export default function AgileCV() {
       />
       <header className="mb-8">
         <h1 className="text-4xl font-bold flex items-center gap-2">
-          Mariano Tuerco
+          Mariano Tuero
           <AudioPresentation small /> {/* Podés pasarle una prop para versión compacta */}
         </h1>
 
