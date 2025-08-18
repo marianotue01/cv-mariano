@@ -1,5 +1,5 @@
 // src/frontend/App.js
-import React from "react";
+import React, { useEffect } from "react";
 import ChatBot from "../components/ChatBot";
 import ExperienceTimeline from "../components/ExperienceTimeline";
 import AudioPresentation from "../components/AudioPresentation";
@@ -21,14 +21,35 @@ import "react-vertical-timeline-component/style.min.css";
 import "../index.css";
 
 // Palabras clave globales
-const globalKeywords = [
-    "Cloud",  "Leadership", "Microservices", "KPIs"
-];
+const globalKeywords = ["Cloud", "Leadership", "Microservices", "KPIs"];
 
 export default function App() {
+  // Integración de Amplitude + Session Replay
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://cdn.eu.amplitude.com/script/b097ae136ea29a9e2a454f3da8beb332.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    script.onload = () => {
+      if (window.amplitude) {
+        window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 }));
+        window.amplitude.init("b097ae136ea29a9e2a454f3da8beb332", {
+          fetchRemoteConfig: true,
+          serverZone: "EU",
+          autocapture: true,
+        });
+      }
+    };
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="max-w-6xl mx-auto p-6 font-sans text-gray-900 bg-gray-50 min-h-screen relative leading-snug">
-      
       {/* Imagen de Mariano */}
       <img
         src="/4x4.jpg"
@@ -45,7 +66,9 @@ export default function App() {
         <p className="text-lg font-semibold text-indigo-700">
           Senior Product Manager | Leader | Multilingual (ES/EN/PT)
         </p>
-        <p className="text-sm text-gray-600">Warsaw, Poland | mariano.tuero@email.com</p>
+        <p className="text-sm text-gray-600">
+          Warsaw, Poland | mariano.tuero@email.com
+        </p>
         <p className="text-sm text-gray-600">
           +48 573 824 000 |{" "}
           <a
