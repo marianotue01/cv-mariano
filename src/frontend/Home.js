@@ -6,6 +6,8 @@ import AudioPresentation from "../components/AudioPresentation";
 import CvSummary from "../components/CvSummary";
 import Section from "../components/Section";
 import TextWithKeywords from "../components/TextWithKeywords";
+import { Link } from "react-router-dom";
+
 
 import {
   coreCompetencies,
@@ -43,6 +45,10 @@ export default function Home() {
     };
   }, []);
 
+  const openAmplitude = () => {
+    window.open("TU_URL_DEL_DASHBOARD_DE_AMPLITUDE", "_blank");
+  };
+
   return (
     <div className="max-w-6xl mx-auto p-6 font-sans text-gray-900 bg-gray-50 min-h-screen relative leading-snug">
       {/* Imagen de Mariano */}
@@ -76,15 +82,22 @@ export default function Home() {
           </a>
         </p>
 
-        {/* Botón para nueva página */}
-        <div className="mt-3">
-          <a
-            href="/Hats"
-            className="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-          >
-            See more ...
-          </a>
-        </div>
+        {/* Botones para nueva página y Amplitude */}
+
+          <div className="mt-3 flex gap-2">
+            <Link
+              to="/Hats"
+              className="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+            >
+              See more ...
+            </Link>
+            <Link
+              to="/Amplitude"
+              className="inline-block px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+            >
+              Analytics
+            </Link>
+          </div>
       </header>
 
       {/* About */}
