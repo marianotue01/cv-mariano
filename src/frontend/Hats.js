@@ -11,7 +11,7 @@ const MiPaginaTexto = () => {
       <div className="relative bg-white p-6 rounded shadow-md w-full max-w-6xl mb-6 overflow-hidden">
         {/* Imagen de fondo compartida */}
         <img
-          src="/sombreroNegro.jpg"
+          src="/sombreronegro.jpg"
           alt="Decorative"
           className="absolute top-1 right-1 w-80 h-80 object-contain opacity-70 pointer-events-none hidden md:block"
         />
@@ -89,7 +89,7 @@ const MiPaginaTexto = () => {
       <div className="relative bg-white p-6 rounded shadow-md w-full max-w-6xl mb-6 overflow-hidden">
         {/* Imagen de fondo */}
         <img
-          src="/sombreroMarron.jpg"
+          src="/sombreromarron.jpg"
           alt="Decorative"
           className="absolute top-1 right-4 w-44 h-44 object-contain opacity-70 pointer-events-none hidden md:block"
         />
@@ -115,7 +115,7 @@ const MiPaginaTexto = () => {
       <div className="relative bg-white p-6 rounded shadow-md w-full max-w-6xl mb-1 overflow-hidden">
         {/* Imagen de fondo */}
         <img
-          src="/sombreroAzul.jpg"
+          src="/sombreroazul.jpg"
           alt="Decorative"
           className="absolute top-0 right-6 w-40 h-40 object-contain opacity-70 pointer-events-none hidden md:block"
         />
