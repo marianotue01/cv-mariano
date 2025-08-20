@@ -11,14 +11,38 @@ Proyecto personal para mostrar mi **Currículum Vitae** en formato web interacti
 - **Vercel** – Hosting / despliegue
 
 ## 📂 Estructura del proyecto
-├── public/ # Archivos estáticos (favicon, imágenes, index.html)
-├── src/
-│ ├── backend/ # Servidor Node.js con Express
-│ ├── components/ # Componentes React (ChatBot, Timeline, etc.)
-│ └── frontend/ # Código principal de la app (App.js, index.js, estilos)
-├── .env # Variables de entorno (API keys, etc.)
-├── package.json # Dependencias y scripts
-└── README.md # Este archivo
+cv-mariano/
+│
+├─ package.json
+├─ .env.local                  # Aquí tu OPENROUTER_API_KEY
+├─ public/
+│  ├─ sombreronegro.jpg
+│  ├─ sombreromarron.jpg
+│  ├─ sombreroazul.jpg
+│  └─ welcome.mp3
+│
+├─ src/
+│  ├─ index.js                 # Punto de entrada principal (ReactDOM.render)
+│  ├─ App.jsx                  # Rutas y layout principal
+│  │
+│  ├─ pages/
+│  │  ├─ Home.jsx
+│  │  ├─ Hats.jsx
+│  │  └─ Amplitude.jsx
+│  │
+│  ├─ components/
+│  │  ├─ ChatBot.jsx
+│  │  ├─ CvSummary.jsx
+│  │  ├─ AudioPresentation.jsx
+│  │  ├─ ExperienceTimeline.jsx
+│  │  └─ Section.jsx
+│  │
+│  ├─ data/
+│  │  ├─ data.js
+│  │  └─ ChatPrompt.js        # generateSystemPrompt
+│
+└─ api/
+   └─ chat.js                  # backend serverless
 
 ## ⚡ Instalación y ejecución local
 ```bash

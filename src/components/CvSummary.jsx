@@ -16,30 +16,35 @@ export default function CvSummary() {
   useEffect(() => {
     const generateSummary = async () => {
       const systemPrompt = `
-      Eres un asistente que resume de manera concisa un CV profesional.
-      Resume de forma clara y profesional el siguiente CV:
+Eres un asistente que resume de manera concisa un CV profesional.
+Resume de forma clara y profesional el siguiente CV:
 
-      About: ${about}
+About: ${about}
 
-      Core Competencies: ${coreCompetencies.join(", ")}
+Core Competencies: ${coreCompetencies.join(", ")}
 
-      Experience: ${experience
-        .map((exp) => `${exp.role} en ${exp.company} (${exp.period})`)
-        .join("; ")}
+Experience: ${experience
+  .map((exp) => `${exp.role} en ${exp.company} (${exp.period})`)
+  .join("; ")}
 
-      Certifications: ${certifications.join(", ")}
+Certifications: ${certifications.join(", ")}
 
-      Education: ${education}
+Education: ${education}
 
-      Languages: ${languages.join(", ")}
+Languages: ${languages.join(", ")}
       `;
 
       try {
         const res = await fetch("/api/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ question: "Please summarize this CV in 3-4 sentences.", systemPrompt }),
+          body: JSON.stringify({
+            question: "Please summarize this CV in 3-4 sentences.",
+            systemPrompt,
+          }),
         });
+
+        if (!res.ok) throw new Error("Error en la API");
 
         const data = await res.json();
         setSummary(data.answer || "No se pudo generar el resumen.");
@@ -56,11 +61,11 @@ export default function CvSummary() {
 
   return (
     <div className="my-1 p-1">
-    {loading ? (
+      {loading ? (
         <p className="text-sm text-gray-500">Generating summary ...</p>
-    ) : (
+      ) : (
         <p className="text-sm text-gray-800">{summary}</p>
-    )}
+      )}
     </div>
   );
 }
