@@ -15,7 +15,7 @@ import {
   certifications,
   education,
   languages,
-} from "./data";
+} from "../data/data";
 
 // Palabras clave globales
 const globalKeywords = ["Cloud", "Leadership", "Microservices", "KPIs"];
@@ -45,9 +45,6 @@ export default function Home() {
     };
   }, []);
 
-  const openAmplitude = () => {
-    window.open("TU_URL_DEL_DASHBOARD_DE_AMPLITUDE", "_blank");
-  };
 
   return (
     <div className="max-w-6xl mx-auto p-6 font-sans text-gray-900 bg-gray-50 min-h-screen relative leading-snug">
@@ -96,6 +93,12 @@ export default function Home() {
               className="inline-block px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
             >
               Analytics
+            </Link>
+                        <Link
+              to="/Amplitude"
+              className="inline-block px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+            >
+              DataBase
             </Link>
           </div>
       </header>

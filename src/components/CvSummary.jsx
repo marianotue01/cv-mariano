@@ -7,7 +7,7 @@ import {
   certifications,
   education,
   languages,
-} from "../frontend/data";
+} from "../data/data";
 
 export default function CvSummary() {
   const [summary, setSummary] = useState("");

@@ -1,4 +1,4 @@
-// src/frontend/chatPrompt.js
+// src/frontend/chatprompt.js
 import { about, coreCompetencies, experience, certifications, education, languages } from "./data";
 
 export const generateSystemPrompt = () => {

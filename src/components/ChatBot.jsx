@@ -1,7 +1,6 @@
 // src/components/ChatBot.jsx
 import React, { useState } from "react";
-import { generateSystemPrompt } from "../frontend/ChatPrompt";
-
+import { generateSystemPrompt } from "../data/chatprompt"
 export default function ChatBot() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");

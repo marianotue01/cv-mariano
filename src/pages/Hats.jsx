@@ -1,15 +1,27 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const MiPaginaTexto = () => {
+const ThreeHatsPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="max-w-6xl mx-auto p-6 font-sans text-gray-900 bg-gray-50 min-h-screen relative leading-snug">
+
+      {/* Botón flotante superior derecho */}
+      <button
+        onClick={() => navigate(-1)}
+        className="fixed top-6 right-6 px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition z-50"
+      >
+        Volver
+      </button>
+
+      {/* Título */}
       <h1 className="text-3xl font-bold mb-6 text-blue-700">
         What are the common activities I do? I wear three hats: 🎩
       </h1>
 
       {/* Contenedor único para los cuatro bloques */}
       <div className="relative bg-white p-6 rounded shadow-md w-full max-w-6xl mb-6 overflow-hidden">
-        {/* Imagen de fondo compartida */}
         <img
           src="/sombreronegro.jpg"
           alt="Decorative"
@@ -87,13 +99,11 @@ const MiPaginaTexto = () => {
 
       {/* Application & Product Owner */}
       <div className="relative bg-white p-6 rounded shadow-md w-full max-w-6xl mb-6 overflow-hidden">
-        {/* Imagen de fondo */}
         <img
           src="/sombreromarron.jpg"
           alt="Decorative"
           className="absolute top-1 right-4 w-44 h-44 object-contain opacity-70 pointer-events-none hidden md:block"
         />
-
         <div className="flex items-center mb-0 relative z-10">
           <div className="w-6 h-6 mr-2 bg-gray-200 rounded-full flex items-center justify-center text-white">
             🎩
@@ -113,13 +123,11 @@ const MiPaginaTexto = () => {
 
       {/* Agile Hat */}
       <div className="relative bg-white p-6 rounded shadow-md w-full max-w-6xl mb-1 overflow-hidden">
-        {/* Imagen de fondo */}
         <img
           src="/sombreroazul.jpg"
           alt="Decorative"
           className="absolute top-0 right-6 w-40 h-40 object-contain opacity-70 pointer-events-none hidden md:block"
         />
-
         <div className="flex items-center mb-0 relative z-10">
           <div className="w-6 h-6 mr-2 bg-blue-500 rounded-full flex items-center justify-center text-white">
             🎩
@@ -137,4 +145,4 @@ const MiPaginaTexto = () => {
   );
 };
 
-export default MiPaginaTexto;
+export default ThreeHatsPage;
