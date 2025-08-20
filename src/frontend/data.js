@@ -22,7 +22,7 @@ export const experience = [
     role: "Senior Product Manager / People Manager",
     period: "Sept 2022 – Present",
     description: [
-      "Technical Product Manager (Associate Director) - Led the vision, strategy, and multi-year roadmap for a global financial reporting and research platform serving internal and external clients across 40+ countries, aligning business objectives with user needs and technical feasibility.",
+      "Technical Product Manager - Led the vision, strategy, and multi-year roadmap for a global financial reporting and research platform serving internal and external clients across 40+ countries, aligning business objectives with user needs and technical feasibility.",
       "Coordinated and mentored distributed Agile teams (up to 25 members across 5 regions), ensuring delivery of high-impact features within PI Planning cycles.",
       "Designed and implemented global taxonomy and metadata governance in Atlas and Adobe Experience Manager, standardizing over 2,500 terms and automating metadata validation, reducing classification time by 30%.",
       "Led the CMS migration from Ovitas to Adobe Experience Manager, integrating automated scripts and Azure DevOps pipelines, increasing publishing efficiency by 35% and reducing content errors.",
@@ -35,7 +35,7 @@ export const experience = [
     role: "Senior Product Manager / People Manager",
     period: "July 2021 – Aug 2022",
     description: [
-      "Global Network Services Product Manager (Executive Director) - Led the strategy and execution for global network products, ensuring integration and operational efficiency across data centers.",
+      "Global Network Services Product Manager - Led the strategy and execution for global network products, ensuring integration and operational efficiency across data centers.",
       "Delivered Logical Build Readiness, an event-driven architecture for rack provisioning, enhancing resilience, reducing preparation time by 25%, and increasing data center readiness accuracy to more than 99%.",
       "Directed NETL microservices in Java/Python, containerized with Docker and orchestrated via Kubernetes, for ingestion, transformation, and exposure of legacy data (syslog, SNMP, flat files); leveraged Kafka Connect/Streams, REST APIs, MongoDB, and Splunk, reducing latency by ~35% and improving real-time monitoring and alerting.",
       "Implemented DART (Device Automation, Reporting, and Tasking), reducing manual network management errors by ~30% and streamlining operational workflows.",
@@ -47,7 +47,7 @@ export const experience = [
     role: "Senior Product Manager",
     period: "Apr 2013 – June 2021",
     description: [
-      "Senior Product Manager (IT Manager) - Led the development of innovative solutions and a unified set of building blocks, enabling centralized self-service platforms, reusable libraries, technical guidance, and standards, improving adoption and consistency across teams.",
+      "Senior Product Manager - Led the development of innovative solutions and a unified set of building blocks, enabling centralized self-service platforms, reusable libraries, technical guidance, and standards, improving adoption and consistency across teams.",
       "Managed a portfolio of five products, ensuring alignment with business objectives, technical excellence, and seamless integration, achieving on-time delivery for 95% of planned releases.",
       "Drove platform standardization and scalability, fostering consistency in architecture and reducing implementation errors by ~20%.",
       "Collaborated cross-functionally with engineering, leadership, and stakeholders to define product strategy, enhance adoption, and implement continuous improvements.",
