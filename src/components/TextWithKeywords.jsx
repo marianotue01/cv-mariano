@@ -1,32 +1,42 @@
 // src/components/TextWithKeywords.jsx
 import React from "react";
 
-// Componente para palabras clave con sombra sutil
+/**
+ * Keyword
+ * 
+ * Input: children (React node)
+ * Description: Highlights a word with a specific color and subtle shadow.
+ * Output: Renders the children text with styling.
+ */
 const Keyword = ({ children }) => (
   <span className="text-indigo-700 drop-shadow-sm">{children}</span>
 );
 
 /**
  * TextWithKeywords
- * @param {string} text - Texto completo
- * @param {string[]} keywords - Palabras clave a resaltar
+ * 
+ * Input:
+ *  - text: string, full text to render
+ *  - keywords: string[], list of keywords to highlight
+ * 
+ * Description:
+ *  Splits text into words and wraps any word that matches a keyword or a percentage
+ *  (e.g., 80%) with the Keyword component.
+ * 
+ * Output:
+ *  - React fragment containing text with highlighted keywords.
  */
 export default function TextWithKeywords({ text, keywords = [] }) {
   return (
     <>
       {text.split(" ").map((word, idx) => {
-        // Limpiar signos de puntuación para comparar
+        // Remove punctuation to check for keyword match
         const cleanWord = word.replace(/[.,;:()]/g, "");
 
-        // Detectar porcentajes (ej: 80%)
-        const isPercentage = /\d+%/.test(cleanWord);
+        // Check if word is a keyword or a percentage
+        const highlight = keywords.includes(cleanWord) || /\d+%/.test(cleanWord);
 
-        // Si es keyword o porcentaje, envolver en <Keyword>
-        return keywords.includes(cleanWord) || isPercentage ? (
-          <Keyword key={idx}>{word} </Keyword>
-        ) : (
-          word + " "
-        );
+        return highlight ? <Keyword key={idx}>{word} </Keyword> : word + " ";
       })}
     </>
   );
