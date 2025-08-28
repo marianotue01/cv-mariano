@@ -133,15 +133,15 @@ export default function Home() {
           </Link>
           <Link
             to="/Amplitude"
-            className="inline-block px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+            className="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
           >
             Analytics
           </Link>
           <Link
             to="https://crud-gray-six.vercel.app/"
-            className="inline-block px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+            className="inline-block px-6 py-2 bg-green-200 text-white rounded hover:bg-green-300 transition"
           >
-            DataBase
+            DataBase PoC
           </Link>
         </div>
       </header>
