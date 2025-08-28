@@ -183,7 +183,7 @@ export default function Home() {
             <img
               src={`/experience-bg-${i}.jpg`}
               alt="Decorative"
-              className="hidden md:block absolute top-24 right-4 w-29 h-16 object-cover transform rotate-45 opacity-30 pointer-events-none"
+              className="hidden md:block absolute top-24 right-4 w-21 h-8 object-cover transform rotate-45 opacity-30 pointer-events-none"
             />
 
             {/* Role and company */}
