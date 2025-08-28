@@ -1,4 +1,20 @@
-// src/components/CvSummary.jsx
+/*
+==================================================
+File: CvSummary.jsx
+Summary:
+- Input:
+  - CV data imported from data.js (about, competencies, experience, certifications, education, languages)
+- Process:
+  1. Initializes state for summary text and loading status.
+  2. On component mount, constructs a system prompt summarizing the full CV.
+  3. Sends the prompt to the backend API `/api/chat` requesting a concise 3-4 sentence summary.
+  4. Updates the summary state with the returned answer.
+  5. Handles loading and error states.
+- Output:
+  - Displays a concise, AI-generated CV summary.
+==================================================
+*/
+
 import React, { useState, useEffect } from "react";
 import {
   about,
@@ -10,22 +26,29 @@ import {
 } from "../data/data";
 
 export default function CvSummary() {
-  const [summary, setSummary] = useState("");
-  const [loading, setLoading] = useState(true);
+  // -------------------------------------------------
+  // State management
+  // -------------------------------------------------
+  const [summary, setSummary] = useState(""); 
+  const [loading, setLoading] = useState(true); 
 
+  // -------------------------------------------------
+  // Generate CV summary once when component mounts
+  // -------------------------------------------------
   useEffect(() => {
     const generateSummary = async () => {
+      // Build system prompt with all CV data
       const systemPrompt = `
-Eres un asistente que resume de manera concisa un CV profesional.
-Resume de forma clara y profesional el siguiente CV:
+You are an assistant that generates a concise, professional CV summary.
+Summarize clearly and professionally the following CV:
 
 About: ${about}
 
 Core Competencies: ${coreCompetencies.join(", ")}
 
 Experience: ${experience
-  .map((exp) => `${exp.role} en ${exp.company} (${exp.period})`)
-  .join("; ")}
+        .map((exp) => `${exp.role} at ${exp.company} (${exp.period})`)
+        .join("; ")}
 
 Certifications: ${certifications.join(", ")}
 
@@ -35,6 +58,7 @@ Languages: ${languages.join(", ")}
       `;
 
       try {
+        // Send request to backend API
         const res = await fetch("/api/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -44,13 +68,13 @@ Languages: ${languages.join(", ")}
           }),
         });
 
-        if (!res.ok) throw new Error("Error en la API");
+        if (!res.ok) throw new Error("API error");
 
         const data = await res.json();
-        setSummary(data.answer || "No se pudo generar el resumen.");
+        setSummary(data.answer || "No summary generated.");
       } catch (err) {
         console.error(err);
-        setSummary("Error al generar resumen.");
+        setSummary("Error generating summary.");
       } finally {
         setLoading(false);
       }
@@ -59,6 +83,9 @@ Languages: ${languages.join(", ")}
     generateSummary();
   }, []);
 
+  // -------------------------------------------------
+  // Render
+  // -------------------------------------------------
   return (
     <div className="my-1 p-1">
       {loading ? (

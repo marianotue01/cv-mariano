@@ -1,13 +1,43 @@
+/*
+==================================================
+File: index.css
+Summary:
+- Input: Default Tailwind CSS setup plus custom styles.
+- Process:
+  1. Import Tailwind base, components, and utility classes.
+  2. Apply custom styles for unordered lists across the app.
+  3. Style vertical timeline elements including date positioning and alignment for left/right items.
+- Output: Provides global styling including typography, list formatting, and timeline layout.
+==================================================
+*/
+
+/* -------------------------------------------------
+   Tailwind setup
+   -------------------------------------------------
+   Imports the core Tailwind styles to use utility classes
+   throughout the app.
+------------------------------------------------- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos personalizados */
+/* -------------------------------------------------
+   Custom list styles
+   -------------------------------------------------
+   Styles all unordered lists with bullet points inside
+   the content box and applies a gray text color.
+------------------------------------------------- */
 ul {
   @apply list-disc list-inside text-gray-700;
 }
 
-/* Timeline */
+/* -------------------------------------------------
+   Vertical timeline styles
+   -------------------------------------------------
+   Styles the date labels of timeline elements. 
+   Includes positioning, font, color, and alignment
+   for left and right timeline items.
+------------------------------------------------- */
 .vertical-timeline-element-date {
   position: absolute !important;
   font-weight: bold;

@@ -1,17 +1,42 @@
-// src/components/AudioPresentation.jsx
+/*
+==================================================
+File: AudioPresentation.jsx
+Summary:
+- Input: 
+  - `small` (boolean) - determines the button size
+- Process:
+  1. Uses a React ref to access the audio element.
+  2. Defines a handlePlay function to play audio on click.
+  3. Renders a button with conditional styling based on the `small` prop.
+  4. Renders an audio element with a source and fallback text.
+- Output: A clickable button that plays the audio clip.
+==================================================
+*/
+
 import React, { useRef } from "react";
 
+/**
+ * AudioPresentation
+ * 
+ * Props:
+ *  - small: boolean, optional, default=false
+ * 
+ * Description:
+ *  Renders a button to play a short audio clip.
+ *  Button size adjusts based on the `small` prop.
+ */
 const AudioPresentation = ({ small = false }) => {
+  // Ref to the <audio> element
   const audioRef = useRef(null);
 
+  // Play the audio when button is clicked
   const handlePlay = () => {
-    if (audioRef.current) {
-      audioRef.current.play();
-    }
+    audioRef.current?.play(); // optional chaining for safety
   };
 
   return (
     <div>
+      {/* Play button */}
       <button
         onClick={handlePlay}
         className={`${
@@ -22,6 +47,8 @@ const AudioPresentation = ({ small = false }) => {
       >
         🔊
       </button>
+
+      {/* Audio element */}
       <audio ref={audioRef}>
         <source src="/welcome.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.

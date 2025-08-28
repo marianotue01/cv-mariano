@@ -1,14 +1,38 @@
-// src/frontend/Home.jsx
+/*
+==================================================
+File: Home.jsx
+Summary:
+- Input: User navigates to the home page of the CV Mariano PoC.
+- Process:
+  1. Imports React, routing, and reusable components.
+  2. Imports static CV data (competencies, experience, certifications, education, languages).
+  3. Defines global keywords to highlight in the text.
+  4. Integrates Amplitude analytics via a script in useEffect.
+  5. Renders main container with profile image, header info, and navigation buttons.
+  6. Renders CV sections using the Section component:
+     - About (AI-generated summary)
+     - Core Competencies
+     - Experience (with decorative backgrounds)
+     - Certifications
+     - Education
+     - Languages
+  7. Includes extra components: ChatBot and ExperienceTimeline.
+- Output: Full interactive CV page with dynamic content, navigation, analytics, and AI-enhanced features.
+==================================================
+*/
+
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+
+// Components
 import ChatBot from "../components/ChatBot";
 import ExperienceTimeline from "../components/ExperienceTimeline";
 import AudioPresentation from "../components/AudioPresentation";
 import CvSummary from "../components/CvSummary";
 import Section from "../components/Section";
 import TextWithKeywords from "../components/TextWithKeywords";
-import { Link } from "react-router-dom";
 
-
+// Data
 import {
   coreCompetencies,
   experience,
@@ -17,11 +41,16 @@ import {
   languages,
 } from "../data/data";
 
-// Palabras clave globales
+// -------------------------------------------------
+// Global keywords: terms to highlight in the CV
+// -------------------------------------------------
 const globalKeywords = ["Cloud", "Leadership", "Microservices", "KPIs"];
 
 export default function Home() {
-  // Integración Amplitude
+  // -------------------------------------------------
+  // Analytics integration with Amplitude
+  // Adds a script to the page that tracks user behavior
+  // -------------------------------------------------
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
@@ -29,6 +58,7 @@ export default function Home() {
     script.async = true;
     document.body.appendChild(script);
 
+    // Initialize Amplitude after script loads
     script.onload = () => {
       if (window.amplitude) {
         window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 }));
@@ -40,33 +70,45 @@ export default function Home() {
       }
     };
 
+    // Cleanup script on unmount
     return () => {
       document.body.removeChild(script);
     };
   }, []);
 
-
+  // -------------------------------------------------
+  // Main page container
+  // -------------------------------------------------
   return (
     <div className="max-w-6xl mx-auto p-6 font-sans text-gray-900 bg-gray-50 min-h-screen relative leading-snug">
-      {/* Imagen de Mariano */}
+
+      {/* -------------------------------------------------
+         Profile image
+         Positioned at top-right with shadow and rounded corners
+      ------------------------------------------------- */}
       <img
         src="/4x4.jpg"
-        alt="Foto de Mariano Tuero"
+        alt="Photo of Mariano Tuero"
         className="absolute top-5 right-8 w-8 h-8 md:w-28 md:h-28 object-cover object-top rounded-full border shadow-md"
       />
 
-      {/* Header */}
+      {/* -------------------------------------------------
+         Header section: Name, title, location, contact info, audio presentation
+      ------------------------------------------------- */}
       <header className="mb-6">
         <h1 className="text-4xl font-bold flex items-center gap-2">
           Mariano Tuero
-          <AudioPresentation small />
+          <AudioPresentation small /> {/* Plays an audio introduction */}
         </h1>
+
         <p className="text-lg font-semibold text-indigo-700">
           Senior Product Manager | Leader | Multilingual (ES/EN/PT)
         </p>
+
         <p className="text-sm text-gray-600">
           Warsaw, Poland | mariano.tuero@email.com
         </p>
+
         <p className="text-sm text-gray-600">
           +48 573 824 000 |{" "}
           <a
@@ -79,31 +121,34 @@ export default function Home() {
           </a>
         </p>
 
-        {/* Botones para nueva página y Amplitude */}
-
-          <div className="mt-3 flex gap-2">
-            <Link
-              to="/Hats"
-              className="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-            >
-              See more ...
-            </Link>
-            <Link
-              to="/Amplitude"
-              className="inline-block px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
-            >
-              Analytics
-            </Link>
-                        <Link
-              to="/Amplitude"
-              className="inline-block px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
-            >
-              DataBase
-            </Link>
-          </div>
+        {/* -------------------------------------------------
+           Navigation buttons: links to other pages
+        ------------------------------------------------- */}
+        <div className="mt-3 flex gap-2">
+          <Link
+            to="/Hats"
+            className="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          >
+            See more ...
+          </Link>
+          <Link
+            to="/Amplitude"
+            className="inline-block px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+          >
+            Analytics
+          </Link>
+          <Link
+            to="/Amplitude"
+            className="inline-block px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+          >
+            DataBase
+          </Link>
+        </div>
       </header>
 
-      {/* About */}
+      {/* -------------------------------------------------
+         About section (AI-generated summary)
+      ------------------------------------------------- */}
       <Section
         title={
           <>
@@ -114,7 +159,9 @@ export default function Home() {
         <CvSummary />
       </Section>
 
-      {/* Core Competencies */}
+      {/* -------------------------------------------------
+         Core Competencies section
+      ------------------------------------------------- */}
       <Section title="Core Competencies">
         <ul>
           {coreCompetencies.map((item, i) => (
@@ -125,21 +172,29 @@ export default function Home() {
         </ul>
       </Section>
 
-      {/* Experience */}
+      {/* -------------------------------------------------
+         Experience section with decorative images
+      ------------------------------------------------- */}
       <Section title="Experience">
         {experience.map((exp, i) => (
           <div key={i} className="relative mb-6 p-4 bg-white rounded shadow-md overflow-hidden">
-            {/* Imagen de fondo inclinada */}
+
+            {/* Decorative background image */}
             <img
               src={`/experience-bg-${i}.jpg`}
               alt="Decorative"
               className="hidden md:block absolute top-24 right-4 w-29 h-16 object-cover transform rotate-45 opacity-30 pointer-events-none"
             />
 
+            {/* Role and company */}
             <h3 className="text-xl font-semibold text-blue-700">
               {exp.role} | {exp.company}
             </h3>
+
+            {/* Period */}
             <p className="text-sm text-green-600 mb-2">[{exp.period}]</p>
+
+            {/* Description list */}
             <ul className="list-disc list-inside text-gray-700 text-sm">
               {exp.description.map((desc, j) => (
                 <li key={j}>
@@ -151,7 +206,9 @@ export default function Home() {
         ))}
       </Section>
 
-      {/* Certifications */}
+      {/* -------------------------------------------------
+         Certifications section
+      ------------------------------------------------- */}
       <Section title="Certifications">
         <ul>
           {certifications.map((cert, i) => (
@@ -162,14 +219,18 @@ export default function Home() {
         </ul>
       </Section>
 
-      {/* Education */}
+      {/* -------------------------------------------------
+         Education section
+      ------------------------------------------------- */}
       <Section title="Education">
         <p className="text-sm">
           <TextWithKeywords text={education} keywords={globalKeywords} />
         </p>
       </Section>
 
-      {/* Languages */}
+      {/* -------------------------------------------------
+         Languages section
+      ------------------------------------------------- */}
       <Section title="Languages">
         <ul>
           {languages.map((lang, i) => (
@@ -180,7 +241,11 @@ export default function Home() {
         </ul>
       </Section>
 
-      {/* Componentes extra */}
+      {/* -------------------------------------------------
+         Extra components
+         ChatBot: floating chat to ask questions about Mariano
+         ExperienceTimeline: horizontal timeline view of career & certifications
+      ------------------------------------------------- */}
       <ChatBot />
       <ExperienceTimeline />
     </div>
