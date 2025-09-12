@@ -11,7 +11,7 @@ Summary:
 ==================================================
 */
 
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home"; // Main CV page
 import Hats from "./pages/Hats"; // "Hats" page
@@ -19,6 +19,11 @@ import Amplitude from "./pages/Amplitude"; // Amplitude dashboard page
 import { Analytics } from "@vercel/analytics/react"; // Vercel analytics integration
 
 export default function App() {
+  // Cambiar el título de la ventana del navegador
+  useEffect(() => {
+    document.title = "AI-powered interactive CV";
+  }, []);
+
   return (
     <Router>
       {/* Wraps the app to enable routing */}
