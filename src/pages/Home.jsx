@@ -137,13 +137,7 @@ export default function Home() {
           >
             Analytics
           </Link>
-          <Link
-            to="https://crud-gray-six.vercel.app/"
-            className="inline-block px-6 py-2 bg-green-500 text-white rounded hover:bg-green-700 transition"
-          >
-            DataBase PoC
-          </Link>
-        </div>
+          </div>
       </header>
 
       {/* -------------------------------------------------
