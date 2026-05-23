@@ -50,7 +50,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "mistralai/mistral-7b-instruct",
+        model: "mistralai/mistral-small-3.1-24b-instruct:free",
         messages: [
           { role: "system", content: systemPrompt },
           { role: "user", content: question },
