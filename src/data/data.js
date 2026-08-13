@@ -14,9 +14,7 @@ Summary:
 // -------------------------------------------------
 // About section
 // Description: A detailed narrative summary of Mariano's professional background, skills, and personal details.
-export const about = `Accomplished Senior Product Manager and Agile Leader with 25+ years of experience delivering transformative solutions across financial services, energy, and IT. 
-Skilled at leading cross-functional teams, driving cloud integrations, microservices, and data governance initiatives that enhance efficiency and compliance. 
-Proven track record in mentoring teams, executing strategic roadmaps, and delivering measurable, high-impact results.
+export const about = `Senior Product Leader with 25+ years of experience leading enterprise portfolios, defining product strategy, and delivering AI-enabled platforms across Healthcare, Financial Services, Energy, and Consulting. Proven track record of translating business strategy into scalable products by leading global cross-functional teams and complex digital transformation initiatives. Recent work focuses on Portfolio Management, Knowledge Graphs, Graph RAG, Enterprise AI, data platforms, and LLM-powered solutions. Strong expertise in Product Strategy, Data Governance, Enterprise Architecture, and stakeholder management, with a consistent focus on delivering measurable business outcomes through innovation, data, and technology. Based in Slovakia. Open to relocation.
 Italian passport. Based in Poland but willing to relocate.
 Born in Argentina, holds dual citizenship (Italian and Argentinian), and is a Systems Engineer.
 As of 2025, he is 46 years old.`;
@@ -37,9 +35,22 @@ export const coreCompetencies = [
 // Description: Work history, roles, periods, and responsibilities.
 export const experience = [
   {
+    company: "Takeda Pharmaceuticals",
+    role: "Senior Product Manager / Portfolio Manager",
+    period: "Dec 2025 – Present",
+    description: [
+      "Lead Product Management for Takeda’s enterprise Knowledge Graph and Agentic AI platform, defining product vision, strategy, roadmap and operating model across Manufacturing, Quality and Supply Chain, with a roadmap extending to 7+ business domains",
+      "Own product strategy and end-to-end lifecycle, translating business use cases into prioritized capabilities across Knowledge Graphs, Graph RAG, LLMs and agentic AI, from discovery and architecture through MVP delivery.",
+      "Reframed the Knowledge Graph initiative from architecture-led implementation to a structured POC → MVP strategy, identifying gaps in ontology ownership, relationships, lineage and governance, and reducing downstream implementation risk.",
+      "Shaped and prioritized AI use cases across Manufacturing, Quality and Supply Chain, translating business needs into actionable product requirements and connecting them to opportunities such as deviation management, CAPA effectiveness, risk detection and batch genealogy.",
+      "Lead Technology Demand and Portfolio Management, shaping and prioritizing strategic initiatives based on business value, strategic alignment, risk, dependencies, feasibility and organizational capacity, ensuring investment decisions are aligned with enterprise priorities.",
+      "Established a standardized demand governance framework spanning problem definition, prioritization, funding, architecture review and delivery, improving portfolio transparency, demand quality and decision-making while reducing rework and enabling stronger alignment between business needs and technology investments."
+    ],
+  },
+  {
     company: "EY Poland",
     role: "Senior Product Manager / People Manager",
-    period: "Sept 2022 – Present",
+    period: "Sept 2022 – Nov 2025",
     description: [
       "Led vision, strategy, and multi-year roadmap for a global financial reporting and research platform, serving clients in 40+ countries.",
       "Coordinated and mentored distributed Agile teams (up to 25 members across 5 regions).",
@@ -54,12 +65,10 @@ export const experience = [
     role: "Senior Product Manager / People Manager",
     period: "July 2021 – Aug 2022",
     description: [
-      "Led strategy and execution for global network products, ensuring integration and operational efficiency.",
-      "Delivered Logical Build Readiness, an event-driven architecture, reducing preparation time by 25% and improving accuracy.",
-      "Directed NETL microservices (Java/Python, Docker, Kubernetes) for legacy data ingestion and transformation; reduced latency by ~35%.",
-      "Implemented DART (Device Automation, Reporting, Tasking), reducing manual errors by ~30%.",
-      "Mentored engineering teams, promoting skills and high performance."
-    ],
+      "Led product strategy and execution for global network products, aligning business, engineering and operations teams to improve data-center integration, resilience and operational efficiency.",
+      "Delivered Logical Build Readiness, an event-driven product for rack provisioning that reduced preparation time by 25% and increased data-center readiness accuracy to >99%.",
+      "Led the modernization of legacy data capabilities, enabling near-real-time ingestion, transformation and monitoring across network data sources and reducing data latency by ~35%.",
+      "Implemented a new data governance framework, improving data quality and compliance with regulatory requirements.",],
   },
   {
     company: "ExxonMobil",
