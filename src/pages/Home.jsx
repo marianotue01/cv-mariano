@@ -137,6 +137,12 @@ export default function Home() {
           >
             Analytics
           </Link>
+          <Link
+            to="/KnowledgeGraph"
+            className="inline-block px-6 py-2 bg-slate-900 text-white rounded hover:bg-slate-700 transition"
+          >
+            Knowledge Graph
+          </Link>
           </div>
       </header>
 

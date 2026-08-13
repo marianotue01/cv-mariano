@@ -16,6 +16,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home"; // Main CV page
 import Hats from "./pages/Hats"; // "Hats" page
 import Amplitude from "./pages/Amplitude"; // Amplitude dashboard page
+import KnowledgeGraph from "./pages/KnowledgeGraph";
 import { Analytics } from "@vercel/analytics/react"; // Vercel analytics integration
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/" element={<Home />} />         {/* Home page */}
         <Route path="/Hats" element={<Hats />} />     {/* Hats page */}
         <Route path="/Amplitude" element={<Amplitude />} /> {/* Amplitude page */}
+        <Route path="/KnowledgeGraph" element={<KnowledgeGraph />} />
       </Routes>
 
       {/* Vercel Analytics for tracking user events */}
