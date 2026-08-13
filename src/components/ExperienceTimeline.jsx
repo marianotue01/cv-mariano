@@ -21,8 +21,9 @@ import { FaBriefcase, FaUniversity, FaCloud } from "react-icons/fa";
 // Timeline data: experience and certifications
 // -------------------------------------------------
 const experienceData = [
+  { title: "Senior Product Leader", company: "Takeda", date: "2025-Today", icon: <FaBriefcase />, type: "job" },
   { title: "Certified SAFe® 6 PO/PdM", company: "Scaled Agile", date: "2024", icon: <FaUniversity />, type: "cert" },
-  { title: "Senior Product Manager", company: "EY", date: "2022-Today", icon: <FaBriefcase />, type: "job" },
+  { title: "Senior Product Manager", company: "EY", date: "2022-2025", icon: <FaBriefcase />, type: "job" },
   { title: "Certified Scrum PO (CSPO)", company: "Scrum Alliance", date: "2022", icon: <FaUniversity />, type: "cert" },
   { title: "Senior Product Manager", company: "J.P. Morgan", date: "2021-2022", icon: <FaBriefcase />, type: "job" },
   { title: "Azure Fundamentals", company: "Azure", date: "2021", icon: <FaCloud />, type: "cert" },
