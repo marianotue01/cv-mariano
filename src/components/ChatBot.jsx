@@ -52,14 +52,14 @@ export default function ChatBot() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 w-80 bg-white border shadow-lg rounded-lg flex flex-col max-h-[500px] overflow-hidden z-50">
+    <div className="fixed bottom-4 right-4 z-50 flex max-h-[500px] w-[min(24rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-[24px] border border-cyan-300/40 bg-slate-950/90 text-slate-50 shadow-[0_0_0_1px_rgba(103,232,249,0.08),0_20px_80px_rgba(15,23,42,0.7),0_0_28px_rgba(34,211,238,0.12)] backdrop-blur-xl">
       
       {/* Header */}
-      <div className="bg-indigo-600 text-white p-3 font-semibold flex justify-between items-center">
-        <span>🤖 Ask anything about Mariano</span>
+      <div className="flex items-center justify-between border-b border-white/10 bg-white/5 p-4 font-semibold text-white">
+        <span className="text-sm text-cyan-100">Ask anything about Mariano</span>
         <button
           onClick={() => setMinimized(!minimized)}
-          className="text-white font-bold px-2 rounded hover:bg-indigo-700"
+          className="rounded-lg px-2 py-1 text-cyan-200 transition hover:bg-cyan-400/10 hover:text-white"
           aria-label={minimized ? "Maximize chat" : "Minimize chat"}
         >
           {minimized ? "🔼" : "🔽"}
@@ -69,13 +69,13 @@ export default function ChatBot() {
       {!minimized && (
         <>
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-3 space-y-2 text-sm">
+          <div className="flex-1 space-y-3 overflow-y-auto p-4 text-sm">
             {messages.map((msg, i) => (
               <div
                 key={i}
-                className={msg.role === "user" ? "text-right text-blue-700" : "text-left text-gray-800"}
+                className={msg.role === "user" ? "text-right text-cyan-100" : "text-left text-slate-200"}
               >
-                <p className="bg-gray-100 inline-block px-3 py-1 rounded break-words">
+                <p className={msg.role === "user" ? "inline-block max-w-[90%] break-words rounded-2xl rounded-br-md border border-cyan-300/20 bg-cyan-400/10 px-3 py-2" : "inline-block max-w-[90%] break-words rounded-2xl rounded-bl-md border border-white/10 bg-white/10 px-3 py-2"}>
                   {msg.content}
                 </p>
               </div>
@@ -83,9 +83,9 @@ export default function ChatBot() {
           </div>
 
           {/* Input */}
-          <div className="p-2 border-t flex">
+          <div className="flex gap-2 border-t border-white/10 bg-slate-950/40 p-3">
             <input
-              className="flex-1 text-sm px-2 py-1 border rounded mr-2"
+              className="min-w-0 flex-1 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-slate-500 focus:border-cyan-300/50"
               type="text"
               placeholder="Type your question..."
               value={input}
@@ -95,7 +95,7 @@ export default function ChatBot() {
             />
             <button
               onClick={sendMessage}
-              className="bg-indigo-600 text-white px-3 py-1 rounded text-sm"
+              className="rounded-xl border border-cyan-300/30 bg-cyan-400/15 px-3 py-2 text-sm font-medium text-cyan-100 transition hover:bg-cyan-400/25"
               disabled={minimized}
             >
               Send
