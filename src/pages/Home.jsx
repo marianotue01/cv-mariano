@@ -44,7 +44,7 @@ import {
 // -------------------------------------------------
 // Global keywords: terms to highlight in the CV
 // -------------------------------------------------
-const globalKeywords = ["Cloud", "Leadership", "Microservices", "KPIs"];
+const globalKeywords = ["Cloud", "Leadership", "Microservices", "KPIs", "Product Strategy", "Data Governance", "Agile", "AI", "LLM", "Knowledge Graphs", "Graph RAG", "Enterprise AI", "Digital Transformation"];
 
 export default function Home() {
   // -------------------------------------------------
@@ -102,15 +102,15 @@ export default function Home() {
         </h1>
 
         <p className="text-lg font-semibold text-indigo-700">
-          Senior Product Manager | Leader | Multilingual (ES/EN/PT)
+          Senior Product Leader | AI & Data Products | Portfolio Management 
         </p>
 
         <p className="text-sm text-gray-600">
-          Warsaw, Poland | mariano.tuero@email.com
+          Bratislava, Slovakia | mariano.tuero@email.com
         </p>
 
         <p className="text-sm text-gray-600">
-          +48 573 824 000 |{" "}
+          +421 918 165 940 |{" "}
           <a
             href="https://linkedin.com/in/mtuero"
             className="text-indigo-600 underline"
