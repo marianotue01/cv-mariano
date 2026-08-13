@@ -46,14 +46,6 @@ import {
 // -------------------------------------------------
 const globalKeywords = ["Cloud", "Leadership", "Microservices", "KPIs", "Product Strategy", "Data Governance", "LLM", "Knowledge Graphs", "Graph RAG", "Digital Transformation"];
 
-const companyBadges = {
-  "Takeda Pharmaceuticals": { src: "/company-logos/takeda.svg", alt: "Takeda" },
-  "EY Poland": { src: "/company-logos/ey.svg", alt: "EY" },
-  "J.P. Morgan": { src: "/company-logos/jpmorgan.svg", alt: "JPMorgan" },
-  ExxonMobil: { src: "/company-logos/exxonmobil.svg", alt: "ExxonMobil" },
-  IBM: { src: "/company-logos/ibm.svg", alt: "IBM" },
-};
-
 export default function Home() {
   // -------------------------------------------------
   // Analytics integration with Amplitude
@@ -159,40 +151,37 @@ export default function Home() {
       ------------------------------------------------- */}
       <Section title="Experience">
         {experience.map((exp, i) => {
-          const badge = companyBadges[exp.company] || { label: exp.company.slice(0, 3).toUpperCase(), accent: "from-slate-700 to-slate-500" };
+          const backgroundImage = `/experience-bg-${i}.jpg`;
 
           return (
             <article key={i} className="group relative mb-5 overflow-hidden rounded-2xl border border-white/10 bg-slate-950/35 p-5 transition hover:border-cyan-400/30 hover:bg-white/5 sm:p-6">
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-2/5 opacity-35 sm:w-1/3">
+                <img
+                  src={backgroundImage}
+                  alt=""
+                  className="h-full w-full object-contain object-right opacity-100 blur-[1px] saturate-125"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-950/55" />
 
-              {/* Decorative background image */}
-              <img
-                src={`/experience-bg-${i}.jpg`}
-                alt="Decorative"
-                className="pointer-events-none absolute right-5 top-5 hidden h-28 w-28 rotate-6 object-cover opacity-20 md:block"
-              />
-
-              <div className="flex items-start justify-between gap-4">
-                <div className="min-w-0 pr-2">
+              <div className="relative z-10">
+                <div className="min-w-0 pr-20">
                   <h3 className="text-xl font-semibold text-white">
                     {exp.role} | {exp.company}
                   </h3>
                 </div>
 
-                <div className="ml-auto flex h-14 w-28 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/95 shadow-[0_8px_22px_rgba(15,23,42,0.18)] transition-transform duration-200 group-hover:scale-[1.02]">
-                  <img src={badge.src} alt={badge.alt} className="h-full w-full object-contain p-2" />
-                </div>
+                <p className="mb-4 mt-1 text-sm font-medium text-cyan-300">{exp.period}</p>
+
+                <ul className="space-y-2 text-sm leading-6 text-slate-200">
+                  {exp.description.map((desc, j) => (
+                    <li key={j} className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                      <TextWithKeywords text={desc} keywords={globalKeywords} />
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              <p className="mb-4 mt-1 text-sm font-medium text-cyan-300">{exp.period}</p>
-
-              <ul className="space-y-2 text-sm leading-6 text-slate-200">
-                {exp.description.map((desc, j) => (
-                  <li key={j} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
-                    <TextWithKeywords text={desc} keywords={globalKeywords} />
-                  </li>
-                ))}
-              </ul>
             </article>
           );
         })}
