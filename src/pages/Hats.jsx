@@ -22,7 +22,6 @@ Summary:
 */
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const sections = [
   {
@@ -101,8 +100,6 @@ const sections = [
 ];
 
 const ThreeHatsPage = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-50">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.25),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.2),_transparent_35%)]" />
@@ -117,13 +114,6 @@ const ThreeHatsPage = () => {
             Product Leadership
           </div>
 
-          <button
-            onClick={() => navigate(-1)}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-white/10"
-          >
-            <span>←</span>
-            Volver
-          </button>
         </header>
 
         <section className="mb-10 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.7)] backdrop-blur-xl sm:p-8 lg:p-10">

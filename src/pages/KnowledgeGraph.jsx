@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import ForceGraph2D from "react-force-graph-2d";
-import { Link } from "react-router-dom";
 import { knowledgeGraph, nodeColors } from "../data/knowledgeGraph";
 
 const graphHeight = 680;
@@ -29,16 +28,11 @@ export default function KnowledgeGraph() {
       <div className="mx-auto max-w-7xl">
         <header className="mb-5 flex flex-wrap items-start justify-between gap-4">
           <div>
-            <Link to="/" className="text-sm text-cyan-300 hover:text-cyan-200">← Back to CV</Link>
             <p className="mt-5 text-xs font-semibold uppercase tracking-[0.25em] text-orange-300">Knowledge Graph PoC</p>
             <h1 className="mt-2 text-3xl font-bold tracking-tight md:text-5xl">Mariano's professional graph</h1>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">
               Explore companies, projects, technologies, skills and domains connected to Mariano's career.
             </p>
-          </div>
-          <div className="rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-right text-sm text-slate-300">
-            <strong className="block text-2xl text-white">{visibleNodes.length}</strong>
-            visible nodes
           </div>
         </header>
 
@@ -93,6 +87,11 @@ export default function KnowledgeGraph() {
             </div>
           </div>
         </section>
+
+        <div className="mt-8 flex items-center justify-between rounded-xl border border-slate-800 bg-slate-900 px-4 py-4 text-sm text-slate-300 shadow-lg">
+          <span className="font-semibold uppercase tracking-[0.16em] text-slate-500">Nodos visibles</span>
+          <strong className="text-2xl leading-none text-white">{visibleNodes.length}</strong>
+        </div>
 
         {selectedNode && (
           <aside className="mt-4 rounded-2xl border border-cyan-900 bg-slate-900 p-5">
