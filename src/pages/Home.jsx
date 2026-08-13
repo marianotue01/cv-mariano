@@ -97,10 +97,6 @@ export default function Home() {
       <main className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <header className="mb-8 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.7)] backdrop-blur-xl sm:p-8 lg:p-10">
           <div className="mb-7 flex items-center justify-between gap-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              Available for product leadership
-            </div>
             <img
               src="/4x4.jpg"
               alt="Mariano Tuero"
