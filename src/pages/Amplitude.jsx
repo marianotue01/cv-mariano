@@ -14,7 +14,6 @@ Summary:
 */
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const metrics = [
   { label: "Portfolio views", value: "8.4K", tone: "cyan" },
@@ -24,8 +23,6 @@ const metrics = [
 ];
 
 export default function Amplitude() {
-  const navigate = useNavigate();
-
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-50">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(6,182,212,0.2),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.18),_transparent_30%)]" />
@@ -34,16 +31,6 @@ export default function Amplitude() {
       <div className="animate-float-delay absolute -right-12 bottom-10 h-72 w-72 rounded-full bg-violet-500/10 blur-3xl" />
 
       <main className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="mb-6 flex justify-end">
-          <button
-            type="button"
-            onClick={() => navigate(-1)}
-            className="z-20 inline-flex items-center justify-center rounded-full border border-white/10 bg-slate-900/80 px-4 py-2 text-sm font-medium text-slate-100 shadow-[0_10px_30px_rgba(15,23,42,0.5)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-slate-800/80"
-          >
-            Back
-          </button>
-        </div>
-
         <header className="mb-8 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.7)] backdrop-blur-xl sm:p-8 lg:p-10">
           <div className="mb-6 flex items-center justify-between gap-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-cyan-300">

@@ -31,10 +31,10 @@ function BackButton() {
     <button
       type="button"
       onClick={() => navigate(-1)}
-      className="fixed right-6 top-6 z-50 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/10"
+      className="fixed right-10 top-10 z-50 inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/75 px-4 py-2 text-sm font-medium text-white shadow-[0_10px_30px_rgba(15,23,42,0.45)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-slate-800/80"
     >
       <span aria-hidden="true">←</span>
-      Volver
+      Back
     </button>
   );
 }

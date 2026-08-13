@@ -108,14 +108,6 @@ const ThreeHatsPage = () => {
       <div className="animate-float-delay absolute -right-10 bottom-10 h-72 w-72 rounded-full bg-violet-500/20 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <header className="mb-8 flex items-center justify-between gap-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 backdrop-blur-xl">
-            <span className="text-lg">🎩</span>
-            Portfolio
-          </div>
-
-        </header>
-
         <section className="mb-10 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.7)] backdrop-blur-xl sm:p-8 lg:p-10">
           <div className="mb-6 flex items-center gap-3 text-sm uppercase tracking-[0.22em] text-cyan-300">
             <span className="h-px w-10 bg-cyan-400" />

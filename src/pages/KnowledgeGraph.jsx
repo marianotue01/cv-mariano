@@ -26,15 +26,21 @@ export default function KnowledgeGraph() {
   return (
     <main className="min-h-screen bg-slate-950 px-4 py-6 text-slate-100 md:px-8">
       <div className="mx-auto max-w-7xl">
-        <header className="mb-5 flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.25em] text-orange-300">Knowledge Graph PoC</p>
-            <h1 className="mt-2 text-3xl font-bold tracking-tight md:text-5xl">Mariano's professional graph</h1>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">
-              Explore companies, projects, technologies, skills and domains connected to Mariano's career.
-            </p>
+        <section className="mb-6 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.7)] backdrop-blur-xl sm:p-8 lg:p-10">
+          <div className="mb-6 flex items-center gap-3 text-sm uppercase tracking-[0.22em] text-cyan-300">
+            <span className="h-px w-10 bg-cyan-400" />
+            Knowledge Graph PoC
           </div>
-        </header>
+
+          <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl">Mariano's professional graph</h1>
+              <p className="mt-4 max-w-2xl text-base text-slate-300 sm:text-lg">
+                Explore companies, projects, technologies, skills and domains connected to Mariano's career.
+              </p>
+            </div>
+          </div>
+        </section>
 
         <section className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-2xl">
           <div className="flex flex-wrap items-center gap-2 border-b border-slate-800 px-4 py-3">

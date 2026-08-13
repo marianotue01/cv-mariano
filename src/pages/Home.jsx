@@ -96,23 +96,22 @@ export default function Home() {
 
       <main className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <header className="mb-8 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.7)] backdrop-blur-xl sm:p-8 lg:p-10">
-          <div className="mb-7 flex items-center justify-between gap-4">
-            <img
-              src="/4x4.jpg"
-              alt="Mariano Tuero"
-              className="h-14 w-14 rounded-full border-2 border-cyan-300/60 object-cover object-top shadow-lg sm:h-20 sm:w-20"
-            />
-          </div>
-
           <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <div className="mb-5 flex items-center gap-3 text-sm uppercase tracking-[0.22em] text-cyan-300">
                 <span className="h-px w-10 bg-cyan-400" />
                 Product leadership portfolio
               </div>
-              <div className="flex flex-wrap items-center gap-3">
-                <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl">Mariano Tuero</h1>
-                <AudioPresentation small />
+              <div className="flex items-center gap-4">
+                <img
+                  src="/4x4.jpg"
+                  alt="Mariano Tuero"
+                  className="h-14 w-14 rounded-full border-2 border-cyan-300/60 object-cover object-top shadow-lg sm:h-20 sm:w-20"
+                />
+                <div className="flex flex-wrap items-center gap-3">
+                  <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl">Mariano Tuero</h1>
+                  <AudioPresentation small />
+                </div>
               </div>
               <p className="mt-4 text-lg font-medium text-cyan-100 sm:text-xl">
                 Senior Product Leader <span className="px-1 text-slate-500">|</span> AI &amp; Data Products <span className="px-1 text-slate-500">|</span> Portfolio Management
