@@ -1,0 +1,8 @@
+<svg width="220" height="84" viewBox="0 0 220 84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EY logo">
+  <rect width="220" height="84" rx="16" fill="#ffffff"/>
+  <rect x="12" y="12" width="90" height="60" rx="12" fill="#f6f1ff"/>
+  <text x="57" y="52" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#6f2cff">EY</text>
+  <text x="118" y="49" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#111827" letter-spacing="1.5">EY</text>
+  <circle cx="172" cy="27" r="8" fill="#ffde59"/>
+  <circle cx="182" cy="27" r="8" fill="#8d5cf6"/>
+</svg>

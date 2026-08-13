@@ -1,0 +1,6 @@
+<svg width="220" height="84" viewBox="0 0 220 84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Takeda logo">
+  <rect width="220" height="84" rx="16" fill="#ffffff"/>
+  <rect x="10" y="10" width="34" height="34" rx="8" fill="#0f5bd8" opacity="0.12"/>
+  <path d="M18 35L34 21L34 35L23 35L23 42L18 42Z" fill="#0f5bd8"/>
+  <text x="110" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#0f5bd8" letter-spacing="1">TAKEDA</text>
+</svg>

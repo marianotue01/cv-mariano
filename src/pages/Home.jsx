@@ -44,7 +44,15 @@ import {
 // -------------------------------------------------
 // Global keywords: terms to highlight in the CV
 // -------------------------------------------------
-const globalKeywords = ["Cloud", "Leadership", "Microservices", "KPIs", "Product Strategy", "Data Governance", "Agile", "AI", "LLM", "Knowledge Graphs", "Graph RAG", "Enterprise AI", "Digital Transformation"];
+const globalKeywords = ["Cloud", "Leadership", "Microservices", "KPIs", "Product Strategy", "Data Governance", "LLM", "Knowledge Graphs", "Graph RAG", "Digital Transformation"];
+
+const companyBadges = {
+  "Takeda Pharmaceuticals": { src: "/company-logos/takeda.svg", alt: "Takeda" },
+  "EY Poland": { src: "/company-logos/ey.svg", alt: "EY" },
+  "J.P. Morgan": { src: "/company-logos/jpmorgan.svg", alt: "JPMorgan" },
+  ExxonMobil: { src: "/company-logos/exxonmobil.svg", alt: "ExxonMobil" },
+  IBM: { src: "/company-logos/ibm.svg", alt: "IBM" },
+};
 
 export default function Home() {
   // -------------------------------------------------
@@ -80,71 +88,50 @@ export default function Home() {
   // Main page container
   // -------------------------------------------------
   return (
-    <div className="max-w-6xl mx-auto p-6 font-sans text-gray-900 bg-gray-50 min-h-screen relative leading-snug">
+    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-50">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(6,182,212,0.2),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.16),_transparent_35%)]" />
+      <div className="bg-grid absolute inset-0 opacity-40" />
+      <div className="animate-float-slow absolute -left-16 top-20 h-64 w-64 rounded-full bg-cyan-500/15 blur-3xl" />
+      <div className="animate-float-delay absolute -right-10 bottom-10 h-72 w-72 rounded-full bg-violet-500/15 blur-3xl" />
 
-      {/* -------------------------------------------------
-         Profile image
-         Positioned at top-right with shadow and rounded corners
-      ------------------------------------------------- */}
-      <img
-        src="/4x4.jpg"
-        alt="Photo of Mariano Tuero"
-        className="absolute top-5 right-8 w-8 h-8 md:w-28 md:h-28 object-cover object-top rounded-full border shadow-md"
-      />
-
-      {/* -------------------------------------------------
-         Header section: Name, title, location, contact info, audio presentation
-      ------------------------------------------------- */}
-      <header className="mb-6">
-        <h1 className="text-4xl font-bold flex items-center gap-2">
-          Mariano Tuero
-          <AudioPresentation small /> {/* Plays an audio introduction */}
-        </h1>
-
-        <p className="text-lg font-semibold text-indigo-700">
-          Senior Product Leader | AI & Data Products | Portfolio Management 
-        </p>
-
-        <p className="text-sm text-gray-600">
-          Bratislava, Slovakia | mariano.tuero@email.com
-        </p>
-
-        <p className="text-sm text-gray-600">
-          +421 918 165 940 |{" "}
-          <a
-            href="https://linkedin.com/in/mtuero"
-            className="text-indigo-600 underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-        </p>
-
-        {/* -------------------------------------------------
-           Navigation buttons: links to other pages
-        ------------------------------------------------- */}
-        <div className="mt-3 flex gap-2">
-          <Link
-            to="/Hats"
-            className="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-          >
-            See more ...
-          </Link>
-          <Link
-            to="/Amplitude"
-            className="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-          >
-            Analytics
-          </Link>
-          <Link
-            to="/KnowledgeGraph"
-            className="inline-block px-6 py-2 bg-slate-900 text-white rounded hover:bg-slate-700 transition"
-          >
-            Knowledge Graph
-          </Link>
+      <main className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <header className="mb-8 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.7)] backdrop-blur-xl sm:p-8 lg:p-10">
+          <div className="mb-7 flex items-center justify-between gap-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200">
+              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              Available for product leadership
+            </div>
+            <img
+              src="/4x4.jpg"
+              alt="Mariano Tuero"
+              className="h-14 w-14 rounded-full border-2 border-cyan-300/60 object-cover object-top shadow-lg sm:h-20 sm:w-20"
+            />
           </div>
-      </header>
+
+          <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <div className="mb-5 flex items-center gap-3 text-sm uppercase tracking-[0.22em] text-cyan-300">
+                <span className="h-px w-10 bg-cyan-400" />
+                Product leadership portfolio
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl">Mariano Tuero</h1>
+                <AudioPresentation small />
+              </div>
+              <p className="mt-4 text-lg font-medium text-cyan-100 sm:text-xl">
+                Senior Product Leader <span className="px-1 text-slate-500">|</span> AI &amp; Data Products <span className="px-1 text-slate-500">|</span> Portfolio Management
+              </p>
+              <p className="mt-4 text-sm text-slate-300">Bratislava, Slovakia <span className="px-1 text-slate-600">|</span> mariano.tuero@email.com <span className="px-1 text-slate-600">|</span> +421 918 165 940</p>
+            </div>
+
+            <nav className="flex flex-wrap gap-3" aria-label="Portfolio sections">
+              <Link to="/Hats" className="rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-100 transition hover:-translate-y-0.5 hover:bg-cyan-500/20">How I work</Link>
+              <Link to="/KnowledgeGraph" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-white/10">Knowledge Graph</Link>
+              <Link to="/Amplitude" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-white/10">Analytics</Link>
+              <a href="https://linkedin.com/in/mtuero" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-white/10" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </nav>
+          </div>
+        </header>
 
       {/* -------------------------------------------------
          About section (AI-generated summary)
@@ -152,7 +139,7 @@ export default function Home() {
       <Section
         title={
           <>
-            About <span className="text-sm font-normal">(Auto-generated by AI)</span>
+            About <span className="text-sm font-normal text-slate-400">(AI-generated)</span>
           </>
         }
       >
@@ -176,34 +163,44 @@ export default function Home() {
          Experience section with decorative images
       ------------------------------------------------- */}
       <Section title="Experience">
-        {experience.map((exp, i) => (
-          <div key={i} className="relative mb-6 p-4 bg-white rounded shadow-md overflow-hidden">
+        {experience.map((exp, i) => {
+          const badge = companyBadges[exp.company] || { label: exp.company.slice(0, 3).toUpperCase(), accent: "from-slate-700 to-slate-500" };
 
-            {/* Decorative background image */}
-            <img
-              src={`/experience-bg-${i}.jpg`}
-              alt="Decorative"
-              className="hidden md:block absolute top-24 right-4 w-21 h-8 object-cover transform rotate-45 opacity-30 pointer-events-none"
-            />
+          return (
+            <article key={i} className="group relative mb-5 overflow-hidden rounded-2xl border border-white/10 bg-slate-950/35 p-5 transition hover:border-cyan-400/30 hover:bg-white/5 sm:p-6">
 
-            {/* Role and company */}
-            <h3 className="text-xl font-semibold text-blue-700">
-              {exp.role} | {exp.company}
-            </h3>
+              {/* Decorative background image */}
+              <img
+                src={`/experience-bg-${i}.jpg`}
+                alt="Decorative"
+                className="pointer-events-none absolute right-5 top-5 hidden h-28 w-28 rotate-6 object-cover opacity-20 md:block"
+              />
 
-            {/* Period */}
-            <p className="text-sm text-green-600 mb-2">[{exp.period}]</p>
+              <div className="flex items-start justify-between gap-4">
+                <div className="min-w-0 pr-2">
+                  <h3 className="text-xl font-semibold text-white">
+                    {exp.role} | {exp.company}
+                  </h3>
+                </div>
 
-            {/* Description list */}
-            <ul className="list-disc list-inside text-gray-700 text-sm">
-              {exp.description.map((desc, j) => (
-                <li key={j}>
-                  <TextWithKeywords text={desc} keywords={globalKeywords} />
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+                <div className="ml-auto flex h-14 w-28 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/95 shadow-[0_8px_22px_rgba(15,23,42,0.18)] transition-transform duration-200 group-hover:scale-[1.02]">
+                  <img src={badge.src} alt={badge.alt} className="h-full w-full object-contain p-2" />
+                </div>
+              </div>
+
+              <p className="mb-4 mt-1 text-sm font-medium text-cyan-300">{exp.period}</p>
+
+              <ul className="space-y-2 text-sm leading-6 text-slate-200">
+                {exp.description.map((desc, j) => (
+                  <li key={j} className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                    <TextWithKeywords text={desc} keywords={globalKeywords} />
+                  </li>
+                ))}
+              </ul>
+            </article>
+          );
+        })}
       </Section>
 
       {/* -------------------------------------------------
@@ -246,8 +243,15 @@ export default function Home() {
          ChatBot: floating chat to ask questions about Mariano
          ExperienceTimeline: horizontal timeline view of career & certifications
       ------------------------------------------------- */}
-      <ChatBot />
-      <ExperienceTimeline />
+        <section className="mb-6 overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-5 shadow-[0_18px_70px_rgba(15,23,42,0.45)] backdrop-blur-xl sm:p-6">
+          <div className="mb-3 flex items-center gap-3">
+            <span className="h-px w-8 bg-cyan-400" />
+            <h2 className="text-xl font-semibold text-white sm:text-2xl">Career Timeline</h2>
+          </div>
+          <ExperienceTimeline />
+        </section>
+        <ChatBot />
+      </main>
     </div>
   );
 }

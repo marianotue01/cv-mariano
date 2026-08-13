@@ -9,7 +9,9 @@ import React from "react";
  * Output: Renders the children text with styling.
  */
 const Keyword = ({ children }) => (
-  <span className="text-indigo-700 drop-shadow-sm">{children}</span>
+  <span className="mx-0.5 inline-flex items-center rounded-md border border-cyan-400/25 bg-cyan-500/10 px-1.5 py-0.5 align-middle text-[0.72em] font-semibold uppercase tracking-[0.08em] text-cyan-200 shadow-sm">
+    {children}
+  </span>
 );
 
 /**
@@ -33,8 +35,11 @@ export default function TextWithKeywords({ text, keywords = [] }) {
         // Remove punctuation to check for keyword match
         const cleanWord = word.replace(/[.,;:()]/g, "");
 
+        const hiddenKeywords = new Set(["AI", "Agile"]);
+        const isHiddenKeyword = hiddenKeywords.has(cleanWord) || hiddenKeywords.has(cleanWord.toLowerCase());
+
         // Check if word is a keyword or a percentage
-        const highlight = keywords.includes(cleanWord) || /\d+%/.test(cleanWord);
+        const highlight = !isHiddenKeyword && (keywords.includes(cleanWord) || /\d+%/.test(cleanWord));
 
         return highlight ? <Keyword key={idx}>{word} </Keyword> : word + " ";
       })}

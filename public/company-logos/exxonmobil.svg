@@ -1,0 +1,10 @@
+<svg width="220" height="84" viewBox="0 0 220 84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ExxonMobil logo">
+  <rect width="220" height="84" rx="16" fill="#ffffff"/>
+  <g transform="translate(15 16)">
+    <rect width="54" height="52" rx="12" fill="#e8f5ec"/>
+    <path d="M14 32L20 20H34L28 32H14Z" fill="#0f9d58"/>
+    <path d="M20 20L27 15H41L35 20H20Z" fill="#1d4ed8"/>
+    <path d="M30 15L38 15L46 32H38L30 15Z" fill="#1d4ed8"/>
+  </g>
+  <text x="90" y="49" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0f172a" letter-spacing="0.2">ExxonMobil</text>
+</svg>

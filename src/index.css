@@ -11,33 +11,59 @@ Summary:
 ==================================================
 */
 
-/* -------------------------------------------------
-   Tailwind setup
-   -------------------------------------------------
-   Imports the core Tailwind styles to use utility classes
-   throughout the app.
-------------------------------------------------- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* -------------------------------------------------
-   Custom list styles
-   -------------------------------------------------
-   Styles all unordered lists with bullet points inside
-   the content box and applies a gray text color.
-------------------------------------------------- */
-ul {
-  @apply list-disc list-inside text-gray-700;
+:root {
+  color-scheme: dark;
 }
 
-/* -------------------------------------------------
-   Vertical timeline styles
-   -------------------------------------------------
-   Styles the date labels of timeline elements. 
-   Includes positioning, font, color, and alignment
-   for left and right timeline items.
-------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, "Segoe UI", sans-serif;
+  background: #020817;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(10px, -18px, 0) scale(1.08);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 18s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: floatSlow 22s ease-in-out infinite 1s;
+}
+
+ul {
+  list-style: none;
+}
+
 .vertical-timeline-element-date {
   position: absolute !important;
   font-weight: bold;

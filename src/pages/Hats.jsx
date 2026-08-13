@@ -24,142 +24,170 @@ Summary:
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+const sections = [
+  {
+    title: "Roadmap",
+    icon: "🧭",
+    accent: "from-cyan-500 to-blue-600",
+    items: [
+      "Make the feature roadmap visible to all stakeholders and dev team",
+      "Prioritize product requirements for development",
+      "Manage and groom the backlog efficiently",
+      "Track progress and ensure timely feature releases",
+      "Plan strategic feature launches"
+    ]
+  },
+  {
+    title: "Customer facing",
+    icon: "🤝",
+    accent: "from-violet-500 to-fuchsia-600",
+    items: [
+      "Translate customer needs into actionable product features",
+      "Identify true customer problems vs perceived wants",
+      "Convert customer language into technical requirements"
+    ]
+  },
+  {
+    title: "Day to day",
+    icon: "⚙️",
+    accent: "from-emerald-500 to-teal-600",
+    items: [
+      "Advocate for customers with Product Owners and development teams",
+      "Ensure all Epics/Features/Stories have correct acceptance criteria",
+      "Foster collaboration across Product Owners and dev teams",
+      "Prioritize and resolve defects or bugs quickly",
+      "Monitor Azure subscriptions and optimize costs/resources"
+    ]
+  },
+  {
+    title: "Deliverables",
+    icon: "📦",
+    accent: "from-amber-500 to-orange-600",
+    items: [
+      "Define and communicate product vision",
+      "Create problem statements and scenarios",
+      "Maintain and update product roadmaps",
+      "Keep strategic backlog current – Epics & Features",
+      "Build Permits presentations",
+      "Prepare supporting documents for all deliverables",
+      "Manage Product Increments"
+    ]
+  },
+  {
+    title: "Application & Product Owner",
+    icon: "🎩",
+    accent: "from-slate-500 to-zinc-700",
+    items: [
+      "Resiliency & Failover – Manage timelines and CPOF issues",
+      "Monitor IT Risk Central (ITRC) for automated break detection",
+      "Maintain up-to-date Application Inventory (lifecycle, roles, components)",
+      "Approve/reject access entitlements for products",
+      "Participate in Agile ceremonies",
+      "Keep execution backlog up-to-date – User Stories",
+      "Manage release processes efficiently"
+    ]
+  },
+  {
+    title: "As Agile Coach/Champion",
+    icon: "🚀",
+    accent: "from-sky-500 to-indigo-600",
+    items: [
+      "Guide teams through their Agile transformation journey (SM, PO, PM experience)",
+      "Actively contribute to company Agile Communities of Practice",
+      "Coordinate Product Increment (PI) planning and execution",
+      "Mentor team members on Agile best practices and continuous improvement"
+    ]
+  }
+];
+
 const ThreeHatsPage = () => {
-  const navigate = useNavigate(); // Hook to programmatically navigate back
+  const navigate = useNavigate();
 
   return (
-    <div className="max-w-6xl mx-auto p-6 font-sans text-gray-900 bg-gray-50 min-h-screen relative leading-snug">
+    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-50">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.25),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.2),_transparent_35%)]" />
+      <div className="bg-grid absolute inset-0 opacity-40" />
+      <div className="animate-float-slow absolute -left-16 top-20 h-64 w-64 rounded-full bg-cyan-500/20 blur-3xl" />
+      <div className="animate-float-delay absolute -right-10 bottom-10 h-72 w-72 rounded-full bg-violet-500/20 blur-3xl" />
 
-      {/* -------------------------------------------------
-         Floating "Back" button at top-right
-      ------------------------------------------------- */}
-      <button
-        onClick={() => navigate(-1)}
-        className="fixed top-6 right-6 px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition z-50"
-      >
-        Volver
-      </button>
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <header className="mb-8 flex items-center justify-between gap-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 backdrop-blur-xl">
+            <span className="text-lg">🎩</span>
+            Product Leadership
+          </div>
 
-      {/* -------------------------------------------------
-         Page title
-      ------------------------------------------------- */}
-      <h1 className="text-3xl font-bold mb-6 text-blue-700">
-        What are the common activities I do? I wear three hats: 🎩
-      </h1>
+          <button
+            onClick={() => navigate(-1)}
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+          >
+            <span>←</span>
+            Volver
+          </button>
+        </header>
 
-      {/* -------------------------------------------------
-         First set of roles: Roadmap, Customer Facing, Day to Day, Deliverables
-         Decorative image behind content
-      ------------------------------------------------- */}
-      <div className="relative bg-white p-6 rounded shadow-md w-full max-w-6xl mb-6 overflow-hidden">
-        <img
-          src="/sombreronegro.jpg"
-          alt="Decorative"
-          className="absolute top-1 right-1 w-80 h-80 object-contain opacity-70 pointer-events-none hidden md:block"
-        />
+        <section className="mb-10 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.7)] backdrop-blur-xl sm:p-8 lg:p-10">
+          <div className="mb-6 flex items-center gap-3 text-sm uppercase tracking-[0.22em] text-cyan-300">
+            <span className="h-px w-10 bg-cyan-400" />
+            How I work
+          </div>
 
-        {/* Roadmap section */}
-        <RoleSection title="Roadmap" items={[
-          "Make the feature roadmap visible to all stakeholders and dev team",
-          "Prioritize product requirements for development",
-          "Manage and groom the backlog efficiently",
-          "Track progress and ensure timely feature releases",
-          "Plan strategic feature launches"
-        ]} />
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl">
+                I wear three hats.
+              </h1>
+              <p className="mt-4 max-w-2xl text-base text-slate-300 sm:text-lg">
+                Strategy, execution, and team enablement come together in one role: I connect customer needs, product priorities, and agile delivery into measurable outcomes.
+              </p>
+            </div>
 
-        {/* Customer Facing section */}
-        <RoleSection title="Customer facing" items={[
-          "Translate customer needs into actionable product features",
-          "Identify true customer problems vs perceived wants",
-          "Convert customer language into technical requirements"
-        ]} />
+            <div className="flex items-center gap-3 rounded-2xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-3 text-sm text-cyan-100">
+              <span className="text-xl">✨</span>
+              Product • Agile • Growth
+            </div>
+          </div>
+        </section>
 
-        {/* Day to Day section */}
-        <RoleSection title="Day to day" items={[
-          "Advocate for customers with Product Owners and development teams",
-          "Ensure all Epics/Features/Stories have correct acceptance criteria",
-          "Foster collaboration across Product Owners and dev teams",
-          "Prioritize and resolve defects or bugs quickly",
-          "Monitor Azure subscriptions and optimize costs/resources"
-        ]} />
-
-        {/* Deliverables section */}
-        <RoleSection title="Deliverables" items={[
-          "Define and communicate product vision",
-          "Create problem statements and scenarios",
-          "Maintain and update product roadmaps",
-          "Keep strategic backlog current – Epics & Features",
-          "Build Permits presentations",
-          "Prepare supporting documents for all deliverables",
-          "Manage Product Increments"
-        ]} />
+        <div className="grid gap-6 lg:grid-cols-2">
+          {sections.map((section, index) => (
+            <RoleCard key={section.title} {...section} index={index} />
+          ))}
+        </div>
       </div>
-
-      {/* -------------------------------------------------
-         Application & Product Owner section
-         Decorative image behind content
-      ------------------------------------------------- */}
-      <div className="relative bg-white p-6 rounded shadow-md w-full max-w-6xl mb-6 overflow-hidden">
-        <img
-          src="/sombreromarron.jpg"
-          alt="Decorative"
-          className="absolute top-1 right-4 w-44 h-44 object-contain opacity-70 pointer-events-none hidden md:block"
-        />
-        <RoleSection title="Application & Product Owner" items={[
-          "Resiliency & Failover – Manage timelines and CPOF issues",
-          "Monitor IT Risk Central (ITRC) for automated break detection",
-          "Maintain up-to-date Application Inventory (lifecycle, roles, components)",
-          "Approve/reject access entitlements for products",
-          "Participate in Agile ceremonies",
-          "Keep execution backlog up-to-date – User Stories",
-          "Manage release processes efficiently"
-        ]} emoji="🎩" bgColor="bg-gray-200" />
-      </div>
-
-      {/* -------------------------------------------------
-         Agile Coach / Champion section
-         Decorative image behind content
-      ------------------------------------------------- */}
-      <div className="relative bg-white p-6 rounded shadow-md w-full max-w-6xl mb-1 overflow-hidden">
-        <img
-          src="/sombreroazul.jpg"
-          alt="Decorative"
-          className="absolute top-0 right-6 w-40 h-40 object-contain opacity-70 pointer-events-none hidden md:block"
-        />
-        <RoleSection title="As Agile Coach/Champion" items={[
-          "Guide teams through their Agile transformation journey (SM, PO, PM experience)",
-          "Actively contribute to company Agile Communities of Practice",
-          "Coordinate Product Increment (PI) planning and execution",
-          "Mentor team members on Agile best practices and continuous improvement"
-        ]} emoji="🎩" bgColor="bg-blue-500" />
-      </div>
-
     </div>
   );
 };
 
-// -------------------------------------------------
-// RoleSection component: reusable for all roles
-// Props:
-// - title: section title
-// - items: array of responsibility/task strings
-// - emoji (optional): emoji icon
-// - bgColor (optional): background color for emoji circle
-// -------------------------------------------------
-const RoleSection = ({ title, items, emoji = "🎩", bgColor = "bg-green-100" }) => (
-  <div className="mb-4 relative z-10">
-    <div className="flex items-center mb-1">
-      <div className={`w-6 h-6 mr-2 rounded-full flex items-center justify-center text-white ${bgColor}`}>
-        {emoji}
+const RoleCard = ({ title, icon, items, accent, index }) => (
+  <article
+    className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-5 shadow-[0_18px_70px_rgba(15,23,42,0.45)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/10 sm:p-6"
+    style={{ animationDelay: `${index * 120}ms` }}
+  >
+    <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${accent}`} />
+    <div className="relative z-10">
+      <div className="mb-5 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${accent} text-xl shadow-lg`}>
+            {icon}
+          </div>
+          <h2 className="text-xl font-semibold text-white">{title}</h2>
+        </div>
+        <span className="rounded-full border border-white/10 bg-slate-900/50 px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-slate-300">
+          focus
+        </span>
       </div>
-      <h2 className="text-xl font-semibold">{title}</h2>
+
+      <ul className="space-y-3 text-sm leading-6 text-slate-200">
+        {items.map((item, i) => (
+          <li key={i} className="flex gap-3">
+            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-cyan-400" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
-    <ul className="list-disc list-inside text-gray-700 space-y-1">
-      {items.map((item, i) => (
-        <li key={i}>{item}</li>
-      ))}
-    </ul>
-  </div>
+  </article>
 );
 
 export default ThreeHatsPage;

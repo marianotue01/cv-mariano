@@ -87,11 +87,11 @@ Languages: ${languages.join(", ")}
   // Render
   // -------------------------------------------------
   return (
-    <div className="my-1 p-1">
+    <div className="my-1">
       {loading ? (
-        <p className="text-sm text-gray-500">Generating summary ...</p>
+        <p className="text-sm text-slate-400">Generating summary ...</p>
       ) : (
-        <p className="text-sm text-gray-800">{summary}</p>
+        <p className="text-sm leading-7 text-slate-200">{summary}</p>
       )}
     </div>
   );

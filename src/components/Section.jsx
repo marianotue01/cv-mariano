@@ -17,9 +17,12 @@ import React from "react";
  *  - Renders a styled <section> element with a header and children content.
  */
 const Section = ({ title, children }) => (
-  <section className="mb-6 bg-white p-6 rounded shadow">
-    <h2 className="text-2xl font-bold mb-2 border-b border-indigo-600 pb-1">{title}</h2>
-    <div className="text-justify leading-snug">{children}</div>
+  <section className="mb-6 overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-5 shadow-[0_18px_70px_rgba(15,23,42,0.45)] backdrop-blur-xl sm:p-6">
+    <div className="mb-5 flex items-center gap-3">
+      <span className="h-px w-8 bg-cyan-400" />
+      <h2 className="text-xl font-semibold text-white sm:text-2xl">{title}</h2>
+    </div>
+    <div className="leading-relaxed text-slate-200">{children}</div>
   </section>
 );
 
