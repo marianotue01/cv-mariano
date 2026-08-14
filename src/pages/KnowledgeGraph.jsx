@@ -34,10 +34,18 @@ export default function KnowledgeGraph() {
 
           <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl">Mariano's professional graph</h1>
+              <h1 className="flex items-center gap-3 text-4xl font-black tracking-tight text-white sm:text-5xl">
+                <span>Mariano's professional graph</span>
+                <img src="/kg.png" alt="" className="h-10 w-10 shrink-0 object-contain sm:h-12 sm:w-12" />
+              </h1>
               <p className="mt-4 max-w-2xl text-base text-slate-300 sm:text-lg">
                 Explore companies, projects, technologies, skills and domains connected to Mariano's career.
               </p>
+            </div>
+
+            <div className="flex items-center gap-3 rounded-2xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-3 text-sm text-cyan-100">
+              <span className="text-xl">✨</span>
+              Semantic leyer
             </div>
           </div>
         </section>

@@ -41,8 +41,9 @@ export default function Amplitude() {
 
           <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl">
-                Analytics in motion.
+              <h1 className="flex items-center gap-3 text-4xl font-black tracking-tight text-white sm:text-5xl">
+                <span>Analytics in motion</span>
+                <img src="/analytics.png" alt="" className="h-10 w-10 shrink-0 object-contain sm:h-12 sm:w-12" />
               </h1>
               <p className="mt-4 max-w-2xl text-base text-slate-300 sm:text-lg">
                 Explore the product signals behind the work, from adoption and engagement to the moments that shape the roadmap.

@@ -116,8 +116,9 @@ const ThreeHatsPage = () => {
 
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl">
-                I wear three hats.
+              <h1 className="flex items-center gap-3 text-4xl font-black tracking-tight text-white sm:text-5xl">
+                <span>I wear three hats</span>
+                <img src="/hat.png" alt="" className="h-10 w-10 shrink-0 object-contain sm:h-12 sm:w-12" />
               </h1>
               <p className="mt-4 max-w-2xl text-base text-slate-300 sm:text-lg">
                 Strategy, execution, and team enablement come together in one role: I connect customer needs, product priorities, and agile delivery into measurable outcomes.

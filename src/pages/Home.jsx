@@ -44,7 +44,28 @@ import {
 // -------------------------------------------------
 // Global keywords: terms to highlight in the CV
 // -------------------------------------------------
-const globalKeywords = ["Cloud", "Leadership", "Microservices", "KPIs", "Product Strategy", "Data Governance", "LLM", "Knowledge Graphs", "Graph RAG", "Digital Transformation"];
+const globalKeywords = [
+  "Product Management", "Knowledge Graph", "Knowledge Graphs", "Agentic", "platform",
+  "product vision", "strategy", "roadmap", "operating model", "Manufacturing", "Quality",
+  "Supply Chain", "business domains", "lifecycle", "business use cases", "prioritized capabilities",
+  "Graph RAG", "LLMs", "discovery", "architecture", "MVP", "ontology", "lineage", "governance",
+  "AI use cases", "product requirements", "deviation management", "CAPA", "risk detection",
+  "batch genealogy", "Technology Demand", "Portfolio Management", "business value", "strategic alignment",
+  "dependencies", "feasibility", "capacity", "demand governance", "prioritization", "funding",
+  "architecture review", "delivery", "portfolio transparency", "decision-making", "rework", "investments",
+  "financial reporting", "research platform", "Agile teams", "taxonomy", "metadata governance", "Atlas",
+  "Adobe Experience Manager", "CMS migration", "Azure DevOps", "publishing efficiency", "regulatory compliance",
+  "Azure AD", "RBAC", "KPIs", "NPS", "Power BI", "product execution", "network products", "engineering",
+  "operations", "data-center integration", "resilience", "operational efficiency", "event-driven product",
+  "rack provisioning", "data readiness", "modernization", "legacy data", "near-real-time ingestion",
+  "transformation", "monitoring", "data sources", "data latency", "data quality", "reusable platforms",
+  "building blocks", "adoption", "portfolio", "standardization", "scalability", "continuous improvements",
+  "License Automation Tool", "hybrid solution", "Agile", "Scrum", "sprint completion", "servant leader",
+  "Agile coach", "metrics", "incidents", "training", "Mainframe", "system programmers", "staffing",
+  "Z/OS", "upgrades", "monitoring", "automation", "SMP", "JCL", "TSO/E", "batch processes",
+  "technical documentation", "Change Management", "Problem Management", "Capacity Planning", "SLA", "DRP",
+  "Cloud", "Leadership", "Microservices", "Digital Transformation"
+];
 
 export default function Home() {
   // -------------------------------------------------
