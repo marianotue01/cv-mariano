@@ -88,15 +88,14 @@ Create `src/backend/.env.local` with your OpenRouter key:
 OPENROUTER_API_KEY=your_key_here
 ```
 
-### 3. Run both processes
+### 3. Run the app and API
 
 ```bash
-# Terminal 1 – API on http://localhost:3001
-cd src/backend && node server.js
-
-# Terminal 2 – app on http://localhost:3000
+# Starts the app on http://localhost:3000 and the API on http://localhost:3001
 npm start
 ```
+
+To run them separately, use `npm run start:frontend` and `npm run start:backend` in two terminals.
 
 `package.json` sets `"proxy": "http://localhost:3001"`, so calls to `/api/chat` from the dev server are forwarded to the Express backend automatically.
 

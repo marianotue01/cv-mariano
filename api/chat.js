@@ -55,6 +55,7 @@ export default async function handler(req, res) {
           { role: "system", content: systemPrompt },
           { role: "user", content: question },
         ],
+        max_tokens: 1000,
       }),
     });
 

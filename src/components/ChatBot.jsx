@@ -23,16 +23,18 @@ export default function ChatBot() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [minimized, setMinimized] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const systemPrompt = generateSystemPrompt();
 
   // Send user message and fetch bot response
   const sendMessage = async () => {
-    if (!input.trim()) return;
+    const question = input.trim();
+    if (!question || sending) return;
 
-    setMessages(prev => [...prev, { role: "user", content: input }]);
-    const question = input;
+    setMessages(prev => [...prev, { role: "user", content: question }]);
     setInput("");
+    setSending(true);
 
     try {
       const res = await fetch("/api/chat", {
@@ -44,10 +46,13 @@ export default function ChatBot() {
       if (!res.ok) throw new Error("Server response error");
 
       const data = await res.json();
-      setMessages(prev => [...prev, { role: "bot", content: data.answer || "No answer provided" }]);
+      if (!data.answer) throw new Error(data.error || "The server returned no answer");
+      setMessages(prev => [...prev, { role: "bot", content: data.answer }]);
     } catch (err) {
       console.error(err);
-      setMessages(prev => [...prev, { role: "bot", content: "Error: could not connect to server." }]);
+      setMessages(prev => [...prev, { role: "bot", content: `Error: ${err.message || "could not connect to server"}.` }]);
+    } finally {
+      setSending(false);
     }
   };
 
@@ -91,14 +96,14 @@ export default function ChatBot() {
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={e => e.key === "Enter" && sendMessage()}
-              disabled={minimized}
+              disabled={minimized || sending}
             />
             <button
               onClick={sendMessage}
               className="rounded-xl border border-cyan-300/30 bg-cyan-400/15 px-3 py-2 text-sm font-medium text-cyan-100 transition hover:bg-cyan-400/25"
-              disabled={minimized}
+              disabled={minimized || sending}
             >
-              Send
+              {sending ? "Sending..." : "Send"}
             </button>
           </div>
         </>

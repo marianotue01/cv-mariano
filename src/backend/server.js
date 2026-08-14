@@ -41,6 +41,7 @@ app.post("/api/chat", async (req, res) => {
           { role: "system", content: systemPrompt },
           { role: "user", content: question },
         ],
+        max_tokens: 1000,
       }),
     });
 
