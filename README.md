@@ -135,6 +135,6 @@ Errors return `{ "error": "..." }` with status `400` (missing fields), `405` (wr
 
 ## 🌍 Deployment
 
-Deployed on **Vercel**. Set `OPENROUTER_API_KEY` as an environment variable in the Vercel project so `api/chat.js` can reach OpenRouter — the key is never exposed to the browser.
+Deployed o n **Vercel**. Set `OPENROUTER_API_KEY` as an environment variable in the Vercel project so `api/chat.js` can reach OpenRouter — the key is never exposed to the browser.
 
 👉 [cv-mariano.vercel.app](https://cv-mariano.vercel.app)
