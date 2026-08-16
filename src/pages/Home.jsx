@@ -129,7 +129,7 @@ export default function Home() {
               <p className="mt-4 text-lg font-medium text-cyan-100 sm:text-xl">
                 Senior Product Leader <span className="px-1 text-slate-500">|</span> AI &amp; Data Products <span className="px-1 text-slate-500">|</span> Portfolio Management
               </p>
-              <p className="mt-4 text-sm text-slate-300">Bratislava, Slovakia <span className="px-1 text-slate-600">|</span> mariano.tuero@email.com <span className="px-1 text-slate-600">|</span> +421 918 165 940</p>
+              <p className="mt-4 text-sm text-slate-300">Europe <span className="px-1 text-slate-600">|</span> mariano.tuero@email.com <span className="px-1 text-slate-600">|</span> +421 918 165 940</p>
             </div>
 
             <nav className="flex flex-wrap gap-3" aria-label="Portfolio sections">
@@ -188,7 +188,7 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="min-w-0 pr-20">
                   <h3 className="text-xl font-semibold text-white">
-                    {exp.role} | {exp.company}
+                    {exp.role} | {exp.company} - {exp.country}
                   </h3>
                 </div>
 

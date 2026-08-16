@@ -35,7 +35,8 @@ export const coreCompetencies = [
 // Description: Work history, roles, periods, and responsibilities.
 export const experience = [
   {
-    company: "Takeda Pharmaceuticals",
+    company: "Takeda",
+    country: "Slovakia",
     role: "Senior Product Manager / Portfolio Manager",
     period: "Dec 2025 – Present",
     description: [
@@ -48,7 +49,8 @@ export const experience = [
     ],
   },
   {
-    company: "EY Poland",
+    company: "EY",
+    country: "Poland",
     role: "Senior Product Manager / People Manager",
     period: "Sept 2022 – Nov 2025",
     description: [
@@ -62,6 +64,7 @@ export const experience = [
   },
   {
     company: "J.P. Morgan",
+    country: "Argentina",
     role: "Senior Product Manager / People Manager",
     period: "July 2021 – Aug 2022",
     description: [
@@ -72,6 +75,7 @@ export const experience = [
   },
   {
     company: "ExxonMobil",
+    country: "Argentina",
     role: "Senior Product Manager",
     period: "Apr 2013 – June 2021",
     description: [
@@ -84,6 +88,7 @@ export const experience = [
   },
   {
     company: "ExxonMobil",
+    country: "Argentina",
     role: "Senior Scrum Master (Manager)",
     period: "Mar 2008 – Mar 2013",
     description: [
@@ -94,6 +99,7 @@ export const experience = [
   },
   {
     company: "IBM",
+    country: "Argentina",
     role: "Supervisor / Team Lead / Technical Writer",
     period: "Oct 2004 – Feb 2008",
     description: [

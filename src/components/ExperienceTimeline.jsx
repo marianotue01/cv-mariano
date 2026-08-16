@@ -21,18 +21,18 @@ import { FaBriefcase, FaUniversity, FaCloud } from "react-icons/fa";
 // Timeline data: experience and certifications
 // -------------------------------------------------
 const experienceData = [
-  { title: "Senior Product Leader", company: "Takeda", date: "2025-Today", icon: <FaBriefcase />, type: "job" },
+  { title: "Senior Product Leader", company: "Takeda - Slovakia", date: "2025-Today", icon: <FaBriefcase />, type: "job" },
   { title: "Certified SAFe® 6 PO/PdM", company: "Scaled Agile", date: "2024", icon: <FaUniversity />, type: "cert" },
-  { title: "Senior Product Manager", company: "EY", date: "2022-2025", icon: <FaBriefcase />, type: "job" },
+  { title: "Senior Product Manager", company: "EY - Poland", date: "2022-2025", icon: <FaBriefcase />, type: "job" },
   { title: "Certified Scrum PO (CSPO)", company: "Scrum Alliance", date: "2022", icon: <FaUniversity />, type: "cert" },
-  { title: "Senior Product Manager", company: "J.P. Morgan", date: "2021-2022", icon: <FaBriefcase />, type: "job" },
+  { title: "Senior Product Manager", company: "J.P. Morgan - Argentina", date: "2021-2022", icon: <FaBriefcase />, type: "job" },
   { title: "Azure Fundamentals", company: "Azure", date: "2021", icon: <FaCloud />, type: "cert" },
   { title: "PMI Agile Certified Practitioner", company: "PMI", date: "2019", icon: <FaUniversity />, type: "cert" },
-  { title: "Senior Product Manager", company: "ExxonMobil", date: "2013-2021", icon: <FaBriefcase />, type: "job" },
-  { title: "Senior Scrum Master", company: "ExxonMobil", date: "2008-2013", icon: <FaBriefcase />, type: "job" },
-  { title: "Mainframe Supervisor", company: "IBM", date: "2004-2008", icon: <FaBriefcase />, type: "job" },
+  { title: "Senior Product Manager", company: "ExxonMobil - Argentina", date: "2013-2021", icon: <FaBriefcase />, type: "job" },
+  { title: "Senior Scrum Master", company: "ExxonMobil - Argentina", date: "2008-2013", icon: <FaBriefcase />, type: "job" },
+  { title: "Mainframe Supervisor", company: "IBM - Argentina", date: "2004-2008", icon: <FaBriefcase />, type: "job" },
   { title: "M.Eng. in Systems Engineering", company: "UTN", date: "2001-2006", icon: <FaUniversity />, type: "cert" },
-  { title: "Technical Writer", company: "IBM", date: "2001-2004", icon: <FaBriefcase />, type: "job" },
+  { title: "Technical Writer", company: "IBM - Argentina", date: "2001-2004", icon: <FaBriefcase />, type: "job" },
   { title: "B.Sc. in Systems Engineering", company: "UTN", date: "1997-2001", icon: <FaUniversity />, type: "cert" },
 ];
 
